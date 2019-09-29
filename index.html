@@ -62,6 +62,50 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-pat甲级1020" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/09/29/pat甲级1020/" class="article-date">
+  <time datetime="2019-09-29T09:04:14.000Z" itemprop="datePublished">2019-09-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/29/pat甲级1020/">pat甲级1020</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1009-Product-of-Polynomials-25-point-s"><a href="#1009-Product-of-Polynomials-25-point-s" class="headerlink" title="1009 Product of Polynomials (25 point(s))"></a>1009 Product of Polynomials (25 point(s))</h2><h2 id="原地址"><a href="#原地址" class="headerlink" title="原地址"></a><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805485033603072" target="_blank">原地址</a></h2><h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h2><ol>
+<li>根据中序和后序建立二叉树，再用bfs遍历输出</li>
+</ol>
+<hr>
+<h2 id="不足："><a href="#不足：" class="headerlink" title="不足："></a>不足：</h2><ol>
+<li>刚开始想静态建树，后来放弃而自己指针用的太少不太熟悉</li>
+</ol>
+<hr>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码:"></a>代码:</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">500</span>+<span class="number">5</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF = <span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> eps = <span class="number">1e-6</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span> &#123;</span></span><br><span class="line">	<span class="keyword">int</span> val;</span><br><span class="line">	node *lef,*rig;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; inOrder(maxn),postOrder(maxn);</span><br><span class="line"><span class="built_in">queue</span>&lt;node*&gt; q;</span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="function">node* <span class="title">built</span> <span class="params">(<span class="keyword">int</span> postL,<span class="keyword">int</span> postR,<span class="keyword">int</span> inL,<span class="keyword">int</span> inR)</span> </span>&#123; </span><br><span class="line">	<span class="keyword">if</span> (postL &gt; postR) <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">	<span class="keyword">int</span> pos;</span><br><span class="line">	node *r = <span class="keyword">new</span> node;</span><br><span class="line">	<span class="keyword">if</span> (find(inOrder.begin()+inL,inOrder.begin()+inR,postOrder[postR]) != inOrder.end()) </span><br><span class="line">		pos = find(inOrder.begin()+inL,inOrder.begin()+inR,postOrder[postR]) - inOrder.begin();</span><br><span class="line">	<span class="keyword">int</span> numL = pos - inL;</span><br><span class="line">	r-&gt;val = postOrder[postR];</span><br><span class="line">	r-&gt;lef = built(postL,postL+numL<span class="number">-1</span>,inL,pos<span class="number">-1</span>);</span><br><span class="line">	r-&gt;rig = built(postL+numL,postR<span class="number">-1</span>,pos+<span class="number">1</span>,inR);</span><br><span class="line">	<span class="keyword">return</span> r;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">bfs</span><span class="params">(node *r)</span> </span>&#123;</span><br><span class="line">	q.push(r);<span class="keyword">int</span> cnt = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span>(!q.empty()) &#123;</span><br><span class="line">		node *t = q.front();q.pop();</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d"</span>,t-&gt;val);</span><br><span class="line">		cnt++;</span><br><span class="line">		cnt == n ? : <span class="built_in">printf</span>(<span class="string">" "</span>);</span><br><span class="line">		<span class="keyword">if</span> (t-&gt;lef != <span class="literal">NULL</span>)q.push(t-&gt;lef);</span><br><span class="line">		<span class="keyword">if</span> (t-&gt;rig != <span class="literal">NULL</span>)q.push(t-&gt;rig);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> ONLIGE_JUDGE</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">else</span></span></span><br><span class="line">    <span class="comment">//freopen("H:\\in.txt","r",stdin);</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">// ONLIGE_JUDGE</span></span></span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; <span class="built_in">cin</span> &gt;&gt; postOrder[i++]);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; <span class="built_in">cin</span> &gt;&gt; inOrder[i++]);</span><br><span class="line">	node *r = built(<span class="number">0</span>,n<span class="number">-1</span>,<span class="number">0</span>,n<span class="number">-1</span>);</span><br><span class="line">	bfs(r);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/09/29/pat甲级1020/" data-id="ck14rip7g0006oktldwcuswwo" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-pat甲级1018" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/09/28/pat甲级1018/" class="article-date">
@@ -103,7 +147,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/28/pat甲级1018/" data-id="ck13poeqf000838tlkj3yc7i6" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/09/28/pat甲级1018/" data-id="ck14rip7k0009oktlro19wyv5" class="article-share-link">Share</a>
       
       
     </footer>
@@ -150,7 +194,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/26/pat甲级1017/" data-id="ck13poeqe000738tllbtfh84h" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/09/26/pat甲级1017/" data-id="ck14rip7j0008oktl2xho6avd" class="article-share-link">Share</a>
       
       
     </footer>
@@ -195,7 +239,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/25/pat甲级1016/" data-id="ck13poeqd000638tl5miu5gzh" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/09/25/pat甲级1016/" data-id="ck14rip7e0005oktlljpdle5h" class="article-share-link">Share</a>
       
       
     </footer>
@@ -239,7 +283,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/24/pat甲级1015/" data-id="ck13poeqc000538tl550kmco6" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/09/24/pat甲级1015/" data-id="ck14rip7h0007oktlxv0ydkxr" class="article-share-link">Share</a>
       
       
     </footer>
@@ -284,7 +328,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/23/pat甲级1014/" data-id="ck13poeqb000438tlgfb5idjk" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/09/23/pat甲级1014/" data-id="ck14rip7a0002oktlt5p9249r" class="article-share-link">Share</a>
       
       
     </footer>
@@ -325,7 +369,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/22/pat甲级1012/" data-id="ck13poeq8000238tl1hx9aro5" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/09/22/pat甲级1012/" data-id="ck14rip7d0004oktlr0j0g4ju" class="article-share-link">Share</a>
       
       
     </footer>
@@ -374,7 +418,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/21/pat甲级1010/" data-id="ck13poeq4000138tlz50gfp9d" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/09/21/pat甲级1010/" data-id="ck14rip6t0001oktlr6446wra" class="article-share-link">Share</a>
       
       
     </footer>
@@ -421,7 +465,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/20/pat甲级1009/" data-id="ck13poeqa000338tl94wqdgzy" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/09/20/pat甲级1009/" data-id="ck14rip7c0003oktlmtttcv4m" class="article-share-link">Share</a>
       
       
     </footer>
@@ -470,7 +514,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/15/hello-world/" data-id="ck13poepy000038tlxx4auiv0" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/15/hello-world/" data-id="ck14rip6m0000oktlswjsiao7" class="article-share-link">Share</a>
       
       
     </footer>
@@ -511,6 +555,10 @@
       <ul>
         
           <li>
+            <a href="/2019/09/29/pat甲级1020/">pat甲级1020</a>
+          </li>
+        
+          <li>
             <a href="/2019/09/28/pat甲级1018/">pat甲级1018</a>
           </li>
         
@@ -524,10 +572,6 @@
         
           <li>
             <a href="/2019/09/24/pat甲级1015/">pat甲级1015</a>
-          </li>
-        
-          <li>
-            <a href="/2019/09/23/pat甲级1014/">pat甲级1014</a>
           </li>
         
       </ul>

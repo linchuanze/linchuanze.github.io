@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>pat甲级1020 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1009 Product of Polynomials (25 point(s))原地址思路： 根据中序和后序建立二叉树，再用bfs遍历输出   不足： 刚开始想静态建树，后来放弃而自己指针用的太少不太熟悉   代码:12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849#i">
+<meta property="og:type" content="article">
+<meta property="og:title" content="pat甲级1020">
+<meta property="og:url" content="http://yoursite.com/2019/09/29/pat甲级1020/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1009 Product of Polynomials (25 point(s))原地址思路： 根据中序和后序建立二叉树，再用bfs遍历输出   不足： 刚开始想静态建树，后来放弃而自己指针用的太少不太熟悉   代码:12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849#i">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-09-29T09:09:04.858Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="pat甲级1020">
+<meta name="twitter:description" content="1009 Product of Polynomials (25 point(s))原地址思路： 根据中序和后序建立二叉树，再用bfs遍历输出   不足： 刚开始想静态建树，后来放弃而自己指针用的太少不太熟悉   代码:12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849#i">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-pat甲级1020" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/09/29/pat甲级1020/" class="article-date">
+  <time datetime="2019-09-29T09:04:14.000Z" itemprop="datePublished">2019-09-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      pat甲级1020
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1009-Product-of-Polynomials-25-point-s"><a href="#1009-Product-of-Polynomials-25-point-s" class="headerlink" title="1009 Product of Polynomials (25 point(s))"></a>1009 Product of Polynomials (25 point(s))</h2><h2 id="原地址"><a href="#原地址" class="headerlink" title="原地址"></a><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805485033603072" target="_blank">原地址</a></h2><h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h2><ol>
+<li>根据中序和后序建立二叉树，再用bfs遍历输出</li>
+</ol>
+<hr>
+<h2 id="不足："><a href="#不足：" class="headerlink" title="不足："></a>不足：</h2><ol>
+<li>刚开始想静态建树，后来放弃而自己指针用的太少不太熟悉</li>
+</ol>
+<hr>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码:"></a>代码:</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">500</span>+<span class="number">5</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF = <span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> eps = <span class="number">1e-6</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span> &#123;</span></span><br><span class="line">	<span class="keyword">int</span> val;</span><br><span class="line">	node *lef,*rig;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; inOrder(maxn),postOrder(maxn);</span><br><span class="line"><span class="built_in">queue</span>&lt;node*&gt; q;</span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="function">node* <span class="title">built</span> <span class="params">(<span class="keyword">int</span> postL,<span class="keyword">int</span> postR,<span class="keyword">int</span> inL,<span class="keyword">int</span> inR)</span> </span>&#123; </span><br><span class="line">	<span class="keyword">if</span> (postL &gt; postR) <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">	<span class="keyword">int</span> pos;</span><br><span class="line">	node *r = <span class="keyword">new</span> node;</span><br><span class="line">	<span class="keyword">if</span> (find(inOrder.begin()+inL,inOrder.begin()+inR,postOrder[postR]) != inOrder.end()) </span><br><span class="line">		pos = find(inOrder.begin()+inL,inOrder.begin()+inR,postOrder[postR]) - inOrder.begin();</span><br><span class="line">	<span class="keyword">int</span> numL = pos - inL;</span><br><span class="line">	r-&gt;val = postOrder[postR];</span><br><span class="line">	r-&gt;lef = built(postL,postL+numL<span class="number">-1</span>,inL,pos<span class="number">-1</span>);</span><br><span class="line">	r-&gt;rig = built(postL+numL,postR<span class="number">-1</span>,pos+<span class="number">1</span>,inR);</span><br><span class="line">	<span class="keyword">return</span> r;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">bfs</span><span class="params">(node *r)</span> </span>&#123;</span><br><span class="line">	q.push(r);<span class="keyword">int</span> cnt = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span>(!q.empty()) &#123;</span><br><span class="line">		node *t = q.front();q.pop();</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d"</span>,t-&gt;val);</span><br><span class="line">		cnt++;</span><br><span class="line">		cnt == n ? : <span class="built_in">printf</span>(<span class="string">" "</span>);</span><br><span class="line">		<span class="keyword">if</span> (t-&gt;lef != <span class="literal">NULL</span>)q.push(t-&gt;lef);</span><br><span class="line">		<span class="keyword">if</span> (t-&gt;rig != <span class="literal">NULL</span>)q.push(t-&gt;rig);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> ONLIGE_JUDGE</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">else</span></span></span><br><span class="line">    <span class="comment">//freopen("H:\\in.txt","r",stdin);</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">// ONLIGE_JUDGE</span></span></span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; <span class="built_in">cin</span> &gt;&gt; postOrder[i++]);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; <span class="built_in">cin</span> &gt;&gt; inOrder[i++]);</span><br><span class="line">	node *r = built(<span class="number">0</span>,n<span class="number">-1</span>,<span class="number">0</span>,n<span class="number">-1</span>);</span><br><span class="line">	bfs(r);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/09/29/pat甲级1020/" data-id="ck14rip7g0006oktldwcuswwo" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/09/28/pat甲级1018/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">pat甲级1018</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/09/29/pat甲级1020/">pat甲级1020</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/28/pat甲级1018/">pat甲级1018</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/26/pat甲级1017/">pat甲级1017</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/25/pat甲级1016/">pat甲级1016</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/24/pat甲级1015/">pat甲级1015</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 7layers<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
