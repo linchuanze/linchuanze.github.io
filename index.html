@@ -62,6 +62,52 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-pat甲级1022" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/10/11/pat甲级1022/" class="article-date">
+  <time datetime="2019-10-11T06:05:39.000Z" itemprop="datePublished">2019-10-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/11/pat甲级1022/">pat甲级1022</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1022-Digital-Library-30-point-s"><a href="#1022-Digital-Library-30-point-s" class="headerlink" title="1022 Digital Library (30 point(s))"></a>1022 Digital Library (30 point(s))</h2><h2 id="原地址"><a href="#原地址" class="headerlink" title="原地址"></a><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805480801550336" target="_blank">原地址</a></h2><h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h2><ol>
+<li>map&lt;string,set<int> &gt;的应用</int></li>
+<li>读取关键字的时候要特别处理</li>
+<li>getchar()吃掉多余回车</li>
+</ol>
+<hr>
+<h2 id="我踩的坑点："><a href="#我踩的坑点：" class="headerlink" title="我踩的坑点："></a>我踩的坑点：</h2><ol>
+<li>图书id需要7位数字，所给的数据可能是0000001,用int读入就变成1,输出就不足7位导致后两个测试列过不了。<br>可以用string存储id,或者printf(“%07d)。</li>
+</ol>
+<hr>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码:"></a>代码:</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1e4</span>+<span class="number">5</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF = <span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> eps = <span class="number">1e-6</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pb push_back</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span> &#123;</span></span><br><span class="line">	<span class="keyword">int</span> id;</span><br><span class="line">	<span class="built_in">string</span> title,author,key,publisher,year;</span><br><span class="line">&#125;book[maxn];</span><br><span class="line"><span class="built_in">map</span>&lt;<span class="built_in">string</span>,<span class="built_in">set</span>&lt;<span class="keyword">int</span>&gt; &gt; mp[<span class="number">6</span>];</span><br><span class="line"><span class="keyword">int</span> n,m,id;</span><br><span class="line"><span class="built_in">string</span> tmp;</span><br><span class="line"><span class="keyword">char</span> s[maxn],*t;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> ONLIGE_JUDGE</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">else</span></span></span><br><span class="line">    freopen(<span class="string">"H:\\in.txt"</span>,<span class="string">"r"</span>,<span class="built_in">stdin</span>);</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">// ONLIGE_JUDGE</span></span></span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;id);getchar();</span><br><span class="line">		getline(<span class="built_in">cin</span>,tmp);</span><br><span class="line">		mp[<span class="number">0</span>][tmp].insert(id);<span class="comment">//title</span></span><br><span class="line">		getline(<span class="built_in">cin</span>,tmp);</span><br><span class="line">		mp[<span class="number">1</span>][tmp].insert(id);<span class="comment">//author</span></span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%[^\n]"</span>,&amp;s);getchar();</span><br><span class="line">		t = strtok(s,<span class="string">" "</span>);</span><br><span class="line">		<span class="keyword">while</span>(t != <span class="literal">NULL</span>) &#123;</span><br><span class="line">			tmp = t;</span><br><span class="line">			mp[<span class="number">2</span>][tmp].insert(id);</span><br><span class="line">			t = strtok(<span class="literal">NULL</span>,<span class="string">" "</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		getline(<span class="built_in">cin</span>,tmp);</span><br><span class="line">		mp[<span class="number">3</span>][tmp].insert(id);<span class="comment">//publisher</span></span><br><span class="line">		getline(<span class="built_in">cin</span>,tmp);</span><br><span class="line">		mp[<span class="number">4</span>][tmp].insert(id);<span class="comment">//year</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; m;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; ++i) &#123;</span><br><span class="line">		<span class="keyword">int</span> num;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d: %[^\n]"</span>,&amp;num,&amp;s);getchar(); </span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d: %s\n"</span>,num,s);</span><br><span class="line">		tmp = s;</span><br><span class="line">		<span class="keyword">if</span> (mp[num<span class="number">-1</span>][tmp].size()) &#123;</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">auto</span> i = mp[num<span class="number">-1</span>][tmp].begin(); i != mp[num<span class="number">-1</span>][tmp].end(); ++i)</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">"%07d\n"</span>,*i);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			<span class="built_in">puts</span>(<span class="string">"Not Found"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/10/11/pat甲级1022/" data-id="ck1lqkc6y0008qwtly3q84zy6" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-pat甲级1021" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/10/07/pat甲级1021/" class="article-date">
@@ -98,7 +144,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/07/pat甲级1021/" data-id="ck1j0lwo20009z4tle53pnvq9" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/07/pat甲级1021/" data-id="ck1lqkc7h000bqwtl8gi39chb" class="article-share-link">Share</a>
       
       
     </footer>
@@ -142,7 +188,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/29/pat甲级1020/" data-id="ck1j0lwo00007z4tlxwvx8hy2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/09/29/pat甲级1020/" data-id="ck1lqkc70000aqwtlb9ebgjky" class="article-share-link">Share</a>
       
       
     </footer>
@@ -189,7 +235,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/28/pat甲级1018/" data-id="ck1j0lwo10008z4tlfcknb6eu" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/09/28/pat甲级1018/" data-id="ck1lqkc6z0009qwtlzop5genh" class="article-share-link">Share</a>
       
       
     </footer>
@@ -236,7 +282,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/26/pat甲级1017/" data-id="ck1j0lwo3000az4tlexf6unjq" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/09/26/pat甲级1017/" data-id="ck1lqkc6w0007qwtl2r802i1g" class="article-share-link">Share</a>
       
       
     </footer>
@@ -281,7 +327,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/25/pat甲级1016/" data-id="ck1j0lwny0006z4tlue1g6rve" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/09/25/pat甲级1016/" data-id="ck1lqkc6t0004qwtlf6up43jh" class="article-share-link">Share</a>
       
       
     </footer>
@@ -325,7 +371,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/24/pat甲级1015/" data-id="ck1j0lwnt0003z4tlg1esryva" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/09/24/pat甲级1015/" data-id="ck1lqkc6v0006qwtlvjvcprdr" class="article-share-link">Share</a>
       
       
     </footer>
@@ -370,7 +416,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/23/pat甲级1014/" data-id="ck1j0lwnx0005z4tlct6egqal" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/09/23/pat甲级1014/" data-id="ck1lqkc6r0003qwtlp4o11051" class="article-share-link">Share</a>
       
       
     </footer>
@@ -411,7 +457,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/22/pat甲级1012/" data-id="ck1j0lwnw0004z4tlfz82nala" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/09/22/pat甲级1012/" data-id="ck1lqkc6u0005qwtlhcbvh8la" class="article-share-link">Share</a>
       
       
     </footer>
@@ -460,54 +506,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/21/pat甲级1010/" data-id="ck1j0lwnp0001z4tlfngp44gd" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-pat甲级1009" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/09/20/pat甲级1009/" class="article-date">
-  <time datetime="2019-09-19T16:00:00.000Z" itemprop="datePublished">2019-09-20</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/20/pat甲级1009/">pat甲级1009</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="1009-Product-of-Polynomials-25-point-s"><a href="#1009-Product-of-Polynomials-25-point-s" class="headerlink" title="1009 Product of Polynomials (25 point(s))"></a>1009 Product of Polynomials (25 point(s))</h2><h2 id="原地址"><a href="#原地址" class="headerlink" title="原地址"></a><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805509540921344" target="_blank">原地址</a></h2><h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h2><ol>
-<li>数组实现。数组下标代表指数，数组存放系数，双重循环遍历。o(n^2)</li>
-<li>map实现。key是指数，value是系数。o(n^2)</li>
-</ol>
-<hr>
-<h2 id="我踩的坑点："><a href="#我踩的坑点：" class="headerlink" title="我踩的坑点："></a>我踩的坑点：</h2><ol>
-<li>指数最大是1000,相乘之后指数相加最大为2000，所以数组要开2000。</li>
-</ol>
-<hr>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码:"></a>代码:</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pb push_back</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1e5</span>+<span class="number">5</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF = <span class="number">1e9</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> eps = <span class="number">1e-6</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">double</span> a[maxn];</span><br><span class="line"><span class="keyword">double</span> b[maxn];</span><br><span class="line"><span class="keyword">double</span> c[maxn];</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">isZero</span><span class="params">(<span class="keyword">double</span> a)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">fabs</span>(a) &lt; eps)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">//freopen("in.txt","r",stdin);</span></span><br><span class="line">    <span class="keyword">int</span> n,<span class="built_in">exp</span>;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; <span class="built_in">exp</span>;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; a[<span class="built_in">exp</span>];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; <span class="built_in">exp</span>;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; b[<span class="built_in">exp</span>];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">2005</span>; ++i) &#123;</span><br><span class="line">        <span class="keyword">if</span> (isZero(a[i])) <span class="keyword">continue</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">2005</span>; ++j) &#123;</span><br><span class="line">            <span class="keyword">if</span> (isZero(b[j])) <span class="keyword">continue</span>;</span><br><span class="line">            c[i+j] += a[i] * b[j];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;n = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">2005</span>; ++i)</span><br><span class="line">        <span class="keyword">if</span> (!isZero(c[i])) n++;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; n ;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2005</span>; i &gt;= <span class="number">0</span>; --i)</span><br><span class="line">        <span class="keyword">if</span> (!isZero(c[i])) &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">" %d %.1f"</span>,i,c[i]);</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/20/pat甲级1009/" data-id="ck1j0lwns0002z4tl16ctrn1t" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/09/21/pat甲级1010/" data-id="ck1lqkc620000qwtlh8pjevn8" class="article-share-link">Share</a>
       
       
     </footer>
@@ -553,6 +552,10 @@
       <ul>
         
           <li>
+            <a href="/2019/10/11/pat甲级1022/">pat甲级1022</a>
+          </li>
+        
+          <li>
             <a href="/2019/10/07/pat甲级1021/">pat甲级1021</a>
           </li>
         
@@ -566,10 +569,6 @@
         
           <li>
             <a href="/2019/09/26/pat甲级1017/">pat甲级1017</a>
-          </li>
-        
-          <li>
-            <a href="/2019/09/25/pat甲级1016/">pat甲级1016</a>
           </li>
         
       </ul>
