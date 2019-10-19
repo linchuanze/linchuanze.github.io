@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>pat甲级1026 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1026 Table Tennis (30 point(s))原地址思路： 按到达时间排序，然后找到编号最小的可用桌子。 分类讨论: 1) 当前用户是vip,且桌子是vip桌，则匹配 2) 当前用户是vip，但桌子是普通的桌子，则查找是否还有vip桌子空闲，若有空闲 则将该vip桌子分配给vip；若没有，则将当前桌子分配个vip。 3) 当前用户不是vip,且当前桌子是普通桌子，则匹配。 4) 当">
+<meta property="og:type" content="article">
+<meta property="og:title" content="pat甲级1026">
+<meta property="og:url" content="http://yoursite.com/2019/10/19/pat甲级1026/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1026 Table Tennis (30 point(s))原地址思路： 按到达时间排序，然后找到编号最小的可用桌子。 分类讨论: 1) 当前用户是vip,且桌子是vip桌，则匹配 2) 当前用户是vip，但桌子是普通的桌子，则查找是否还有vip桌子空闲，若有空闲 则将该vip桌子分配给vip；若没有，则将当前桌子分配个vip。 3) 当前用户不是vip,且当前桌子是普通桌子，则匹配。 4) 当">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-10-19T08:16:57.324Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="pat甲级1026">
+<meta name="twitter:description" content="1026 Table Tennis (30 point(s))原地址思路： 按到达时间排序，然后找到编号最小的可用桌子。 分类讨论: 1) 当前用户是vip,且桌子是vip桌，则匹配 2) 当前用户是vip，但桌子是普通的桌子，则查找是否还有vip桌子空闲，若有空闲 则将该vip桌子分配给vip；若没有，则将当前桌子分配个vip。 3) 当前用户不是vip,且当前桌子是普通桌子，则匹配。 4) 当">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-pat甲级1026" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/10/19/pat甲级1026/" class="article-date">
+  <time datetime="2019-10-19T07:48:18.000Z" itemprop="datePublished">2019-10-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      pat甲级1026
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1026-Table-Tennis-30-point-s"><a href="#1026-Table-Tennis-30-point-s" class="headerlink" title="1026 Table Tennis (30 point(s))"></a>1026 Table Tennis (30 point(s))</h2><h2 id="原地址"><a href="#原地址" class="headerlink" title="原地址"></a><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805472333250560" target="_blank">原地址</a></h2><h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h2><ol>
+<li>按到达时间排序，然后找到编号最小的可用桌子。</li>
+<li>分类讨论: <pre><code>1) 当前用户是vip,且桌子是vip桌，则匹配
+2) 当前用户是vip，但桌子是普通的桌子，则查找是否还有vip桌子空闲，若有空闲
+则将该vip桌子分配给vip；若没有，则将当前桌子分配个vip。
+3) 当前用户不是vip,且当前桌子是普通桌子，则匹配。
+4) 当前用户不是vip，但桌子是vip桌子，则向后查找等待队列里是否有vip,若有vip
+则将桌子分给vip；若没有，则将桌子分给当前用户。</code></pre></li>
+</ol>
+<hr>
+<h2 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h2><p>时间不超过2小时</p>
+<h2 id="我踩的坑点："><a href="#我踩的坑点：" class="headerlink" title="我踩的坑点："></a>我踩的坑点：</h2><ol>
+<li>此类模拟题需要理清楚逻辑关系，写下来再编程，不然编的混乱，还容易遗漏。</li>
+</ol>
+<hr>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码:"></a>代码:</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1e4</span>+<span class="number">5</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF = <span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> eps = <span class="number">1e-6</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pb push_back</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">player</span> &#123;</span></span><br><span class="line">	<span class="keyword">int</span> arrive,serve,wait,cost,tag;</span><br><span class="line">	player(<span class="keyword">int</span> a,<span class="keyword">int</span> b,<span class="keyword">int</span> c):arrive(a),cost(b),tag(c),serve(INF),wait(<span class="number">0</span>)&#123;&#125; </span><br><span class="line">&#125;;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">table</span> &#123;</span></span><br><span class="line">	<span class="keyword">int</span> serve,cnt,tag;</span><br><span class="line">	table():serve(<span class="number">8</span>*<span class="number">3600</span>),cnt(<span class="number">0</span>),tag(<span class="number">0</span>)&#123;&#125;</span><br><span class="line">&#125;; </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getTime</span><span class="params">(<span class="keyword">int</span> hh,<span class="keyword">int</span> mm,<span class="keyword">int</span> ss)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> hh * <span class="number">3600</span> + mm*<span class="number">60</span> + ss;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">getHour</span><span class="params">(<span class="keyword">int</span> &amp;hh,<span class="keyword">int</span> &amp;mm,<span class="keyword">int</span> &amp;ss,<span class="keyword">int</span> t)</span> </span>&#123;</span><br><span class="line">	hh = t / <span class="number">3600</span>;</span><br><span class="line">	mm = (t % <span class="number">3600</span>) / <span class="number">60</span>; </span><br><span class="line">	ss = t % <span class="number">60</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp1</span> <span class="params">(<span class="keyword">const</span> player &amp;a,<span class="keyword">const</span> player &amp;b)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> a.arrive &lt; b.arrive;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp2</span> <span class="params">(<span class="keyword">const</span> player &amp;a,<span class="keyword">const</span> player &amp;b)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> a.serve &lt; b.serve;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> ONLIGE_JUDGE</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">else</span></span></span><br><span class="line"><span class="comment">//    freopen("H:\\in.txt","r",stdin);</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">// ONLIGE_JUDGE</span></span></span><br><span class="line">	<span class="built_in">vector</span>&lt;player&gt; p;</span><br><span class="line">	<span class="keyword">int</span> n,tN,vipN,tmp;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">		<span class="keyword">int</span> hh,mm,ss,cost,tag;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d:%d:%d %d %d"</span>,&amp;hh,&amp;mm,&amp;ss,&amp;cost,&amp;tag);</span><br><span class="line">		<span class="keyword">if</span> (cost &gt; <span class="number">120</span>) cost = <span class="number">120</span>;</span><br><span class="line">		p.pb(player(getTime(hh,mm,ss),cost*<span class="number">60</span>,tag));</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; tN &gt;&gt; vipN;</span><br><span class="line">	<span class="built_in">vector</span>&lt;table&gt; t(tN);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; vipN; ++i) &#123;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; tmp;</span><br><span class="line">		t[tmp<span class="number">-1</span>].tag = <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	sort(p.begin(),p.end(),cmp1);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">		<span class="keyword">if</span> (p[i].serve != INF) <span class="keyword">continue</span>;<span class="comment">//if the player has benn processed </span></span><br><span class="line">		<span class="keyword">int</span> posT,minn = INF;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; tN; ++j) &#123;<span class="comment">// find the available table with the smallest number</span></span><br><span class="line">			<span class="keyword">if</span> (t[j].serve &lt; minn) &#123;</span><br><span class="line">				minn = t[j].serve;</span><br><span class="line">				posT = j;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (t[posT].serve &gt;= <span class="number">21</span> * <span class="number">3600</span> || p[i].arrive &gt;= <span class="number">21</span> * <span class="number">3600</span>) <span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">int</span> posP = i,tt = posT;</span><br><span class="line">		<span class="keyword">if</span> (p[i].tag &amp;&amp; !t[posT].tag) &#123;</span><br><span class="line">			<span class="keyword">int</span> jj = tt;</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> j = tt+<span class="number">1</span>; j &lt; tN; ++j) &#123;</span><br><span class="line">				<span class="keyword">if</span> (t[j].tag &amp;&amp; t[j].serve &lt;= p[i].arrive) &#123;</span><br><span class="line">					jj = j;</span><br><span class="line">					<span class="keyword">break</span>;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			tt = jj;</span><br><span class="line">		&#125; <span class="keyword">else</span> <span class="keyword">if</span> (!p[i].tag &amp;&amp; t[posT].tag) &#123;</span><br><span class="line">			<span class="keyword">int</span> ii = <span class="number">-1</span>;</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> j = i+<span class="number">1</span>; j &lt; n; ++j) &#123;</span><br><span class="line">			<span class="comment">//if the player has been processed should skip</span></span><br><span class="line">				<span class="keyword">if</span> (p[j].serve == INF &amp;&amp; p[j].tag &amp;&amp; p[j].arrive &lt;= t[posT].serve) &#123;</span><br><span class="line">					ii = j;</span><br><span class="line">					<span class="keyword">break</span>;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span> (ii != <span class="number">-1</span>) &#123;</span><br><span class="line">				i--;</span><br><span class="line">				posP = ii;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		p[posP].serve = t[tt].serve = max(t[tt].serve,p[posP].arrive);</span><br><span class="line">		p[posP].wait = p[posP].serve - p[posP].arrive;</span><br><span class="line">		t[tt].serve += p[posP].cost;<span class="comment">//update next serve time</span></span><br><span class="line">		t[tt].cnt++;</span><br><span class="line">	&#125;</span><br><span class="line">	sort(p.begin(),p.end(),cmp2);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">		<span class="keyword">if</span> (p[i].serve &gt;= <span class="number">21</span> * <span class="number">3600</span>) <span class="keyword">continue</span>;</span><br><span class="line">		<span class="keyword">int</span> h1,h2,m1,m2,s1,s2,w;</span><br><span class="line">		getHour(h1,m1,s1,p[i].arrive);</span><br><span class="line">		getHour(h2,m2,s2,p[i].serve);</span><br><span class="line">		w = (<span class="keyword">int</span>)round(p[i].wait / <span class="number">60.0</span>);</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%02d:%02d:%02d %02d:%02d:%02d %d\n"</span>,h1,m1,s1,h2,m2,s2,w);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; tN; ++i)</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d%c"</span>,t[i].cnt,i == tN<span class="number">-1</span> ? <span class="string">'\n'</span> : <span class="string">' '</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/10/19/pat甲级1026/" data-id="ck1xadsi1000apctlplkndkuh" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/10/11/pat甲级1022/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">pat甲级1022</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/10/19/pat甲级1026/">pat甲级1026</a>
+          </li>
+        
+          <li>
+            <a href="/2019/10/11/pat甲级1022/">pat甲级1022</a>
+          </li>
+        
+          <li>
+            <a href="/2019/10/07/pat甲级1021/">pat甲级1021</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/29/pat甲级1020/">pat甲级1020</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/28/pat甲级1018/">pat甲级1018</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 7layers<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
