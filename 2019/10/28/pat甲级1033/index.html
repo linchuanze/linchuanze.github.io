@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>pat甲级1033 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1009 Product of Polynomials (25 point(s))原地址思路： 模拟。先思考你会怎么一步步做，写出伪代码，然后转换成代码。  先求出从当前位置出发，加满油能跑的距离。若没有能到达的点，即到不了终点，输出。若有能到达的点，则从近到远，查看可以到达的站点，如果找到汽油价格比当前价格低的就前往这个站点。如果不存在这样的站点，就看看能到的最远的站点是不是终点，若是终点就到终">
+<meta property="og:type" content="article">
+<meta property="og:title" content="pat甲级1033">
+<meta property="og:url" content="http://yoursite.com/2019/10/28/pat甲级1033/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1009 Product of Polynomials (25 point(s))原地址思路： 模拟。先思考你会怎么一步步做，写出伪代码，然后转换成代码。  先求出从当前位置出发，加满油能跑的距离。若没有能到达的点，即到不了终点，输出。若有能到达的点，则从近到远，查看可以到达的站点，如果找到汽油价格比当前价格低的就前往这个站点。如果不存在这样的站点，就看看能到的最远的站点是不是终点，若是终点就到终">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-10-28T15:33:46.021Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="pat甲级1033">
+<meta name="twitter:description" content="1009 Product of Polynomials (25 point(s))原地址思路： 模拟。先思考你会怎么一步步做，写出伪代码，然后转换成代码。  先求出从当前位置出发，加满油能跑的距离。若没有能到达的点，即到不了终点，输出。若有能到达的点，则从近到远，查看可以到达的站点，如果找到汽油价格比当前价格低的就前往这个站点。如果不存在这样的站点，就看看能到的最远的站点是不是终点，若是终点就到终">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-pat甲级1033" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/10/28/pat甲级1033/" class="article-date">
+  <time datetime="2019-10-28T15:16:35.000Z" itemprop="datePublished">2019-10-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      pat甲级1033
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1009-Product-of-Polynomials-25-point-s"><a href="#1009-Product-of-Polynomials-25-point-s" class="headerlink" title="1009 Product of Polynomials (25 point(s))"></a>1009 Product of Polynomials (25 point(s))</h2><h2 id="原地址"><a href="#原地址" class="headerlink" title="原地址"></a><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805458722734080" target="_blank">原地址</a></h2><h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h2><ol>
+<li>模拟。先思考你会怎么一步步做，写出伪代码，然后转换成代码。</li>
+</ol>
+<p>先求出从当前位置出发，加满油能跑的距离。<br>若没有能到达的点，即到不了终点，输出。<br>若有能到达的点，则从近到远，查看可以到达的站点，如果找到汽油价格比当前价格低的就前往这个站点。<br>如果不存在这样的站点，就看看能到的最远的站点是不是终点，若是终点就到终点。</p>
+<h2 id="若不是终点，就加满油前往该站点-这里加满也到不了终点，为了价格最低所以加满）。"><a href="#若不是终点，就加满油前往该站点-这里加满也到不了终点，为了价格最低所以加满）。" class="headerlink" title="若不是终点，就加满油前往该站点(这里加满也到不了终点，为了价格最低所以加满）。"></a>若不是终点，就加满油前往该站点(这里加满也到不了终点，为了价格最低所以加满）。</h2><h2 id="代码"><a href="#代码" class="headerlink" title="代码:"></a>代码:</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1e6</span>+<span class="number">5</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF = <span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> eps = <span class="number">1e-6</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pb push_back</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span> &#123;</span></span><br><span class="line">	<span class="keyword">double</span> price;</span><br><span class="line">	<span class="keyword">int</span> dis;</span><br><span class="line">	<span class="keyword">bool</span> <span class="keyword">operator</span> &lt; (<span class="keyword">const</span> node&amp; b) &#123;</span><br><span class="line">		<span class="keyword">return</span> dis &gt; b.dis;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;a[maxn];</span><br><span class="line"><span class="built_in">vector</span>&lt;node&gt; v;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span> <span class="params">(<span class="keyword">const</span> node&amp;a,<span class="keyword">const</span> node&amp;b)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> a.dis &lt; b.dis;</span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="keyword">bool</span> vis[maxn]=&#123;<span class="literal">false</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> ONLIGE_JUDGE</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">else</span></span></span><br><span class="line">    <span class="comment">//freopen("H:\\in.txt","r",stdin);</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">// ONLIGE_JUDGE</span></span></span><br><span class="line">	<span class="keyword">int</span> c,dis,run,n,tmpD = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">double</span> res = <span class="number">0</span>,tmpP = <span class="number">-1</span>,tmpC = <span class="number">0</span>;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; c &gt;&gt; dis &gt;&gt; run &gt;&gt; n; </span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; a[i].price &gt;&gt; a[i].dis;</span><br><span class="line">		<span class="keyword">if</span> (a[i].dis == <span class="number">0</span>) tmpP = a[i].price;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (tmpP &lt; <span class="number">0</span>) &#123;<span class="comment">//can't reach next station</span></span><br><span class="line">		<span class="keyword">return</span> <span class="built_in">printf</span>(<span class="string">"The maximum travel distance = %.2f\n"</span>,(<span class="keyword">double</span>)tmpD),<span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	sort(a,a+n,cmp);</span><br><span class="line">	node d;d.dis = dis;</span><br><span class="line">	a[n] = d;</span><br><span class="line">	<span class="keyword">int</span> j = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span> (tmpD &lt; dis) &#123;</span><br><span class="line">		<span class="keyword">int</span> maxDis = tmpD + c * run;</span><br><span class="line">		v.clear();</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)</span><br><span class="line">			<span class="keyword">if</span> (tmpD &lt; a[i].dis &amp;&amp; maxDis &gt;= a[i].dis) &#123;</span><br><span class="line">				v.pb(a[i]);</span><br><span class="line">			&#125; </span><br><span class="line">		<span class="keyword">if</span> (v.size()) &#123;<span class="comment">//can reach next station </span></span><br><span class="line">			j = <span class="number">0</span>;</span><br><span class="line">			<span class="keyword">while</span> (v[j].price &gt; tmpP) j++;</span><br><span class="line">			<span class="keyword">if</span> (j &gt;= v.size()) &#123;<span class="comment">//can't find cheaper station</span></span><br><span class="line">				j = min_element(v.begin(),v.end()) - v.begin();<span class="comment">//chose the maxdis station from available station</span></span><br><span class="line">				<span class="keyword">if</span> (v[j].dis == dis) &#123;</span><br><span class="line">					res += (v[j].dis - tmpD) / (<span class="keyword">double</span>)run * tmpP;</span><br><span class="line">				&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">					res += (c - tmpC) * tmpP;	</span><br><span class="line">					tmpC = c - (v[j].dis - tmpD) / (<span class="keyword">double</span>)run; </span><br><span class="line">				&#125;</span><br><span class="line">				tmpD = v[j].dis;</span><br><span class="line">				tmpP = v[j].price;</span><br><span class="line">			&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">				tmpC -= (v[j].dis - tmpD) / (<span class="keyword">double</span>)run;</span><br><span class="line">				<span class="keyword">if</span> (tmpC &lt; <span class="number">0</span>) &#123;</span><br><span class="line">					res += <span class="built_in">fabs</span>(tmpC) * tmpP;</span><br><span class="line">					tmpC = <span class="number">0</span>;</span><br><span class="line">				&#125; </span><br><span class="line">				tmpD = v[j].dis;</span><br><span class="line">				tmpP = v[j].price;</span><br><span class="line">			&#125; </span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;<span class="comment">//can't reach next station</span></span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"The maximum travel distance = %.2f\n"</span>,(<span class="keyword">double</span>)maxDis);</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125; <span class="keyword">if</span> (tmpD &gt;= dis) &#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%.2f\n"</span>,res);</span><br><span class="line">	&#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/10/28/pat甲级1033/" data-id="ck2al087u000awktlvnr5qj61" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/10/19/pat甲级1026/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">pat甲级1026</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/10/28/pat甲级1033/">pat甲级1033</a>
+          </li>
+        
+          <li>
+            <a href="/2019/10/19/pat甲级1026/">pat甲级1026</a>
+          </li>
+        
+          <li>
+            <a href="/2019/10/11/pat甲级1022/">pat甲级1022</a>
+          </li>
+        
+          <li>
+            <a href="/2019/10/07/pat甲级1021/">pat甲级1021</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/29/pat甲级1020/">pat甲级1020</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 7layers<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
