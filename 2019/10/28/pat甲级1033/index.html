@@ -7,17 +7,17 @@
   
   <title>pat甲级1033 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1009 Product of Polynomials (25 point(s))原地址思路： 模拟。先思考你会怎么一步步做，写出伪代码，然后转换成代码。  先求出从当前位置出发，加满油能跑的距离。若没有能到达的点，即到不了终点，输出。若有能到达的点，则从近到远，查看可以到达的站点，如果找到汽油价格比当前价格低的就前往这个站点。如果不存在这样的站点，就看看能到的最远的站点是不是终点，若是终点就到终">
+  <meta name="description" content="1033 To Fill or Not to Fill (25 point(s))原地址思路： 模拟。先思考你会怎么一步步做，写出伪代码，然后转换成代码。  先求出从当前位置出发，加满油能跑的距离。若没有能到达的点，即到不了终点，输出。若有能到达的点，则从近到远，查看可以到达的站点，如果找到汽油价格比当前价格低的就前往这个站点。如果不存在这样的站点，就看看能到的最远的站点是不是终点，若是终点就到终">
 <meta property="og:type" content="article">
 <meta property="og:title" content="pat甲级1033">
 <meta property="og:url" content="http://yoursite.com/2019/10/28/pat甲级1033/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="1009 Product of Polynomials (25 point(s))原地址思路： 模拟。先思考你会怎么一步步做，写出伪代码，然后转换成代码。  先求出从当前位置出发，加满油能跑的距离。若没有能到达的点，即到不了终点，输出。若有能到达的点，则从近到远，查看可以到达的站点，如果找到汽油价格比当前价格低的就前往这个站点。如果不存在这样的站点，就看看能到的最远的站点是不是终点，若是终点就到终">
+<meta property="og:description" content="1033 To Fill or Not to Fill (25 point(s))原地址思路： 模拟。先思考你会怎么一步步做，写出伪代码，然后转换成代码。  先求出从当前位置出发，加满油能跑的距离。若没有能到达的点，即到不了终点，输出。若有能到达的点，则从近到远，查看可以到达的站点，如果找到汽油价格比当前价格低的就前往这个站点。如果不存在这样的站点，就看看能到的最远的站点是不是终点，若是终点就到终">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-10-28T15:33:46.021Z">
+<meta property="og:updated_time" content="2019-10-30T15:25:32.172Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="pat甲级1033">
-<meta name="twitter:description" content="1009 Product of Polynomials (25 point(s))原地址思路： 模拟。先思考你会怎么一步步做，写出伪代码，然后转换成代码。  先求出从当前位置出发，加满油能跑的距离。若没有能到达的点，即到不了终点，输出。若有能到达的点，则从近到远，查看可以到达的站点，如果找到汽油价格比当前价格低的就前往这个站点。如果不存在这样的站点，就看看能到的最远的站点是不是终点，若是终点就到终">
+<meta name="twitter:description" content="1033 To Fill or Not to Fill (25 point(s))原地址思路： 模拟。先思考你会怎么一步步做，写出伪代码，然后转换成代码。  先求出从当前位置出发，加满油能跑的距离。若没有能到达的点，即到不了终点，输出。若有能到达的点，则从近到远，查看可以到达的站点，如果找到汽油价格比当前价格低的就前往这个站点。如果不存在这样的站点，就看看能到的最远的站点是不是终点，若是终点就到终">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -86,7 +86,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="1009-Product-of-Polynomials-25-point-s"><a href="#1009-Product-of-Polynomials-25-point-s" class="headerlink" title="1009 Product of Polynomials (25 point(s))"></a>1009 Product of Polynomials (25 point(s))</h2><h2 id="原地址"><a href="#原地址" class="headerlink" title="原地址"></a><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805458722734080" target="_blank">原地址</a></h2><h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h2><ol>
+        <h2 id="1033-To-Fill-or-Not-to-Fill-25-point-s"><a href="#1033-To-Fill-or-Not-to-Fill-25-point-s" class="headerlink" title="1033 To Fill or Not to Fill (25 point(s))"></a>1033 To Fill or Not to Fill (25 point(s))</h2><h2 id="原地址"><a href="#原地址" class="headerlink" title="原地址"></a><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805458722734080" target="_blank">原地址</a></h2><h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h2><ol>
 <li>模拟。先思考你会怎么一步步做，写出伪代码，然后转换成代码。</li>
 </ol>
 <p>先求出从当前位置出发，加满油能跑的距离。<br>若没有能到达的点，即到不了终点，输出。<br>若有能到达的点，则从近到远，查看可以到达的站点，如果找到汽油价格比当前价格低的就前往这个站点。<br>如果不存在这样的站点，就看看能到的最远的站点是不是终点，若是终点就到终点。</p>
@@ -94,7 +94,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/28/pat甲级1033/" data-id="ck2dfiagy000c9otlmyx5yj6u" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/28/pat甲级1033/" data-id="ck2dfn258000dp8tlqwv2fvqk" class="article-share-link">Share</a>
       
       
     </footer>
