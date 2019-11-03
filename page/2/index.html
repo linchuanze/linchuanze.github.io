@@ -62,6 +62,50 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-pat甲级1015" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/09/24/pat甲级1015/" class="article-date">
+  <time datetime="2019-09-24T09:20:45.000Z" itemprop="datePublished">2019-09-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/24/pat甲级1015/">pat甲级1015</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1015-Reversible-Primes-20-point-s"><a href="#1015-Reversible-Primes-20-point-s" class="headerlink" title="1015 Reversible Primes (20 point(s))"></a>1015 Reversible Primes (20 point(s))</h2><h2 id="原地址"><a href="#原地址" class="headerlink" title="原地址"></a><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805495863296000" target="_blank">原地址</a></h2><h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h2><ol>
+<li>模拟</li>
+</ol>
+<hr>
+<h2 id="我踩的坑点："><a href="#我踩的坑点：" class="headerlink" title="我踩的坑点："></a>我踩的坑点：</h2><ol>
+<li>题意是在D进制下翻转后的数在10进制下是否是素数</li>
+</ol>
+<hr>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码:"></a>代码:</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pb push_back</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1e5</span>+<span class="number">5</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF = <span class="number">1e9</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> eps = <span class="number">1e-6</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> isPrime[maxn];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">select</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">    fill(isPrime,isPrime+maxn,<span class="number">1</span>);</span><br><span class="line">    isPrime[<span class="number">0</span>] = isPrime[<span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt; maxn; ++i) &#123;</span><br><span class="line">        <span class="keyword">if</span> (isPrime[i]) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">2</span> * i; j &lt; maxn; j += i)</span><br><span class="line">                isPrime[j] = <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> ONLIGE_JUDGE</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">else</span></span></span><br><span class="line">    freopen(<span class="string">"H:\\in.txt"</span>,<span class="string">"r"</span>,<span class="built_in">stdin</span>);</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">// ONLIGE_JUDGE</span></span></span><br><span class="line">    select();</span><br><span class="line">    <span class="keyword">int</span> n,m,t,sum;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m &amp;&amp; n &gt;= <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="built_in">string</span> s;</span><br><span class="line">        t = n;</span><br><span class="line">        <span class="keyword">for</span> (; t ; t /= m) &#123;</span><br><span class="line">            s += to_string(t%m);</span><br><span class="line">        &#125;</span><br><span class="line">        sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; s.size();++i)</span><br><span class="line">            sum = sum * m + (s[i] - <span class="string">'0'</span>);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%s\n"</span>, (isPrime[n] &amp;&amp; isPrime[sum]) ? <span class="string">"Yes"</span> : <span class="string">"No"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/09/24/pat甲级1015/" data-id="ck2j4h0hn0005a4tlaw7ok6uc" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-pat甲级1014" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/09/23/pat甲级1014/" class="article-date">
@@ -97,7 +141,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/23/pat甲级1014/" data-id="ck2dfn24x0004p8tlsbn3hi4i" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/09/23/pat甲级1014/" data-id="ck2j4h0hm0004a4tlfc017kza" class="article-share-link">Share</a>
       
       
     </footer>
@@ -138,7 +182,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/22/pat甲级1012/" data-id="ck2dfn24w0003p8tlvhhajwby" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/09/22/pat甲级1012/" data-id="ck2j4h0hp0007a4tla1o2fnkh" class="article-share-link">Share</a>
       
       
     </footer>
@@ -187,7 +231,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/21/pat甲级1010/" data-id="ck2dfn24s0001p8tl0gh139k9" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/09/21/pat甲级1010/" data-id="ck2j4h0hj0002a4tldeoo42cg" class="article-share-link">Share</a>
       
       
     </footer>
@@ -234,7 +278,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/20/pat甲级1009/" data-id="ck2dfn24u0002p8tlso2fe92u" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/09/20/pat甲级1009/" data-id="ck2j4h0hg0001a4tl1e0jxo4e" class="article-share-link">Share</a>
       
       
     </footer>
@@ -283,7 +327,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/15/hello-world/" data-id="ck2dfn24m0000p8tlv978vh9u" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/15/hello-world/" data-id="ck2j4h0hb0000a4tl38bqtyh4" class="article-share-link">Share</a>
       
       
     </footer>
@@ -316,7 +360,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li></ul>
     </div>
   </div>
 
@@ -327,6 +371,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2019/11/03/pat甲级1038/">pat甲级1038</a>
+          </li>
         
           <li>
             <a href="/2019/10/30/pat甲级1034/">pat甲级1034</a>
@@ -342,10 +390,6 @@
         
           <li>
             <a href="/2019/10/11/pat甲级1022/">pat甲级1022</a>
-          </li>
-        
-          <li>
-            <a href="/2019/10/07/pat甲级1021/">pat甲级1021</a>
           </li>
         
       </ul>
