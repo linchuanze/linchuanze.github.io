@@ -62,6 +62,51 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-pat甲级1016" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/09/25/pat甲级1016/" class="article-date">
+  <time datetime="2019-09-25T04:28:45.000Z" itemprop="datePublished">2019-09-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/25/pat甲级1016/">pat甲级1016</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1016-Phone-Bills-25-point-s"><a href="#1016-Phone-Bills-25-point-s" class="headerlink" title="1016 Phone Bills (25 point(s))"></a>1016 Phone Bills (25 point(s))</h2><h2 id="原地址"><a href="#原地址" class="headerlink" title="原地址"></a><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805493648703488" target="_blank">原地址</a></h2><h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h2><ol>
+<li>匹配。通过map按名字分类按时间排序，遍历查看是否是on-line和off-line,若是则计算</li>
+<li>分时计算。累加或者从一号开始计费off-line的金额与从一号开始计费的on-line的金额两者的差值</li>
+</ol>
+<hr>
+<h2 id="我踩的坑点："><a href="#我踩的坑点：" class="headerlink" title="我踩的坑点："></a>我踩的坑点：</h2><ol>
+<li>它是测试例之间至少有一组是匹配的，不是每个用户都有一组匹配</li>
+</ol>
+<hr>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码:"></a>代码:</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1e5</span>+<span class="number">5</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF = <span class="number">1e9</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> eps = <span class="number">1e-6</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">int</span> cost[<span class="number">25</span>];</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> mon,day,hh,mm,state;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">typedef</span> <span class="built_in">map</span>&lt;<span class="built_in">string</span>,<span class="built_in">vector</span>&lt;node&gt; &gt; MP;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(<span class="keyword">const</span> node&amp; a,<span class="keyword">const</span> node&amp; b)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (a.mon != b.mon)</span><br><span class="line">        <span class="keyword">return</span> a.mon &lt; b.mon;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (a.day != b.day)</span><br><span class="line">        <span class="keyword">return</span> a.day &lt; b.day;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (a.hh != b.hh)</span><br><span class="line">        <span class="keyword">return</span> a.hh &lt; b.hh;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">return</span> a.mm &lt; b.mm;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">solve</span><span class="params">(node a,node b,<span class="keyword">int</span> &amp;t)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (a.day &gt; b.day || a.hh &gt; b.hh || a.mm &gt; b.mm) &#123;</span><br><span class="line">        t++;</span><br><span class="line">        sum += cost[b.hh];</span><br><span class="line">        b.mm++;</span><br><span class="line">        <span class="keyword">if</span> (b.mm &gt;= <span class="number">60</span>) &#123;</span><br><span class="line">            b.hh++;</span><br><span class="line">            b.mm = <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (b.hh &gt;= <span class="number">24</span>) &#123;</span><br><span class="line">            b.day++;</span><br><span class="line">            b.hh = <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> (<span class="keyword">double</span>)sum / <span class="number">100.0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> ONLIGE_JUDGE</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">else</span></span></span><br><span class="line">    freopen(<span class="string">"H:\\in.txt"</span>,<span class="string">"r"</span>,<span class="built_in">stdin</span>);</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">// ONLIGE_JUDGE</span></span></span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    MP mp;</span><br><span class="line">    <span class="built_in">string</span> name,state;</span><br><span class="line">    <span class="keyword">bool</span> flag = <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">24</span> ; <span class="built_in">cin</span> &gt;&gt; cost[i++]);</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; name;</span><br><span class="line">        node tmp;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d:%d:%d:%d"</span>,&amp;tmp.mon,&amp;tmp.day,&amp;tmp.hh,&amp;tmp.mm);</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; state;</span><br><span class="line">        state == <span class="string">"on-line"</span> ? tmp.state = <span class="number">1</span> : tmp.state = <span class="number">0</span>;</span><br><span class="line">        mp[name].push_back(tmp);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (MP::iterator i = mp.begin(); i != mp.end(); ++i) &#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;node&gt; v = i -&gt; second;</span><br><span class="line">        sort(v.begin(),v.end(),cmp);</span><br><span class="line">        <span class="keyword">double</span> res = <span class="number">0</span>;flag = <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; v.size(); ++j) &#123;</span><br><span class="line">            <span class="keyword">if</span> (v[j].state == <span class="number">0</span> &amp;&amp; v[j<span class="number">-1</span>].state == <span class="number">1</span>) &#123;</span><br><span class="line">                <span class="keyword">if</span> (!flag) &#123;</span><br><span class="line">                    flag = <span class="literal">true</span>;</span><br><span class="line">                    <span class="built_in">printf</span>(<span class="string">"%s %02d\n"</span>,i-&gt;first.c_str(),v[<span class="number">0</span>].mon);</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">int</span> t = <span class="number">0</span>;</span><br><span class="line">                <span class="keyword">double</span> bills;</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">"%02d:%02d:%02d "</span>,v[j<span class="number">-1</span>].day,v[j<span class="number">-1</span>].hh,v[j<span class="number">-1</span>].mm);</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">"%02d:%02d:%02d "</span>,v[j].day,v[j].hh,v[j].mm);</span><br><span class="line">                bills = solve(v[j],v[j<span class="number">-1</span>],t);</span><br><span class="line">                res += bills;</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">"%d $%.2f\n"</span>,t,bills);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (flag)<span class="built_in">printf</span>(<span class="string">"Total amount: $%.2f\n"</span>,res);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/09/25/pat甲级1016/" data-id="ck2llytya000678tld1fm0mfu" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-pat甲级1015" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/09/24/pat甲级1015/" class="article-date">
@@ -96,7 +141,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/24/pat甲级1015/" data-id="ck2j4h0hn0005a4tlaw7ok6uc" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/09/24/pat甲级1015/" data-id="ck2llyty8000478tlatxjlujf" class="article-share-link">Share</a>
       
       
     </footer>
@@ -141,7 +186,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/23/pat甲级1014/" data-id="ck2j4h0hm0004a4tlfc017kza" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/09/23/pat甲级1014/" data-id="ck2llyty9000578tl7ecov6oa" class="article-share-link">Share</a>
       
       
     </footer>
@@ -182,7 +227,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/22/pat甲级1012/" data-id="ck2j4h0hp0007a4tla1o2fnkh" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/09/22/pat甲级1012/" data-id="ck2llyty6000378tltlvv57zw" class="article-share-link">Share</a>
       
       
     </footer>
@@ -231,7 +276,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/21/pat甲级1010/" data-id="ck2j4h0hj0002a4tldeoo42cg" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/09/21/pat甲级1010/" data-id="ck2llytx8000078tlo2x9bh34" class="article-share-link">Share</a>
       
       
     </footer>
@@ -278,7 +323,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/20/pat甲级1009/" data-id="ck2j4h0hg0001a4tl1e0jxo4e" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/09/20/pat甲级1009/" data-id="ck2llyty5000278tlqzqdhop2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -327,7 +372,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/15/hello-world/" data-id="ck2j4h0hb0000a4tl38bqtyh4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/15/hello-world/" data-id="ck2llyty3000178tlue75ueh0" class="article-share-link">Share</a>
       
       
     </footer>
@@ -373,6 +418,10 @@
       <ul>
         
           <li>
+            <a href="/2019/11/05/pat甲级1093/">pat甲级1093</a>
+          </li>
+        
+          <li>
             <a href="/2019/11/03/pat甲级1038/">pat甲级1038</a>
           </li>
         
@@ -386,10 +435,6 @@
         
           <li>
             <a href="/2019/10/19/pat甲级1026/">pat甲级1026</a>
-          </li>
-        
-          <li>
-            <a href="/2019/10/11/pat甲级1022/">pat甲级1022</a>
           </li>
         
       </ul>
