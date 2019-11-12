@@ -62,6 +62,48 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-pat甲级1045" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/11/11/pat甲级1045/" class="article-date">
+  <time datetime="2019-11-11T15:26:23.000Z" itemprop="datePublished">2019-11-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/11/pat甲级1045/">pat甲级1045</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1045-Favorite-Color-Stripe-30-point-s"><a href="#1045-Favorite-Color-Stripe-30-point-s" class="headerlink" title="1045 Favorite Color Stripe (30 point(s))"></a>1045 Favorite Color Stripe (30 point(s))</h2><h2 id="原地址"><a href="#原地址" class="headerlink" title="原地址"></a><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805437411475456" target="_blank">原地址</a></h2><h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h2><ol>
+<li>看了大佬的思路如下：<br>这一题是DP问题，可以用LCS以及LIS解决，只不过用LCS解决时，需要修改状态方程。<br>用LIS时，需要利用映射方法，将所给的喜爱颜色序列按顺序进行编号，就可以将问题转换为经典的LIS问题啦。</li>
+</ol>
+<hr>
+<h2 id="LIS代码"><a href="#LIS代码" class="headerlink" title="LIS代码:"></a>LIS代码:</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1e5</span>+<span class="number">5</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF = <span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> eps = <span class="number">1e-6</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MOD = <span class="number">1000000007</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pb push_back</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> Hash[<span class="number">205</span>],a[maxn],dp[maxn];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> ONLIGE_JUDGE</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">else</span></span></span><br><span class="line">    freopen(<span class="string">"H:\\in.txt"</span>,<span class="string">"r"</span>,<span class="built_in">stdin</span>);</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">// ONLIGE_JUDGE</span></span></span><br><span class="line">	<span class="keyword">int</span> n,m,l,t,num = <span class="number">0</span>,res = <span class="number">0</span>; </span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;n,&amp;m);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; ++i) &#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;t);</span><br><span class="line">		Hash[t] = i+<span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;l);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; l; ++i) &#123;<span class="comment">//把不喜欢的颜色剔除 </span></span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;t);</span><br><span class="line">		!Hash[t] ? : a[num++] = Hash[t];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; num; ++i) &#123;</span><br><span class="line">		dp[i] = <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; i; ++j) &#123;</span><br><span class="line">			<span class="keyword">if</span> (a[i] &gt;= a[j])</span><br><span class="line">				dp[i] = max(dp[i],dp[j]+<span class="number">1</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		res = max(dp[i],res);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d\n"</span>,res);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="LCS代码："><a href="#LCS代码：" class="headerlink" title="LCS代码："></a>LCS代码：</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1e4</span>+<span class="number">5</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF = <span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> eps = <span class="number">1e-6</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MOD = <span class="number">1000000007</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pb push_back</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> a[maxn],b[maxn],dp[<span class="number">210</span>][maxn];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> ONLIGE_JUDGE</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">else</span></span></span><br><span class="line">    freopen(<span class="string">"H:\\in.txt"</span>,<span class="string">"r"</span>,<span class="built_in">stdin</span>);</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">// ONLIGE_JUDGE</span></span></span><br><span class="line">	<span class="keyword">int</span> n,m,l; </span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;n,&amp;m);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; ++i)</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a[i]);</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;l);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; l; ++i) </span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d"</span>,b+i);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= m; ++i)<span class="comment">// 初始化边界 </span></span><br><span class="line">		dp[i][<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= l; ++i)<span class="comment">// 初始化边界</span></span><br><span class="line">		dp[<span class="number">0</span>][i] = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; ++i) &#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= l; ++j) &#123;</span><br><span class="line">			<span class="keyword">if</span> (a[i<span class="number">-1</span>] == b[j<span class="number">-1</span>])</span><br><span class="line">				dp[i][j] = max(dp[i<span class="number">-1</span>][j],dp[i][j<span class="number">-1</span>]) + <span class="number">1</span>;</span><br><span class="line">			<span class="keyword">else</span> </span><br><span class="line">				dp[i][j] = max(dp[i<span class="number">-1</span>][j],dp[i][j<span class="number">-1</span>]);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d\n"</span>,dp[m][l]);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/11/11/pat甲级1045/" data-id="ck2ul6icx000g3gtl6sg4fbij" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-pat甲级1044" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/11/10/pat甲级1044/" class="article-date">
@@ -98,7 +140,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/11/10/pat甲级1044/" data-id="ck2t5mxdv000fcotlwl5tojyy" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/11/10/pat甲级1044/" data-id="ck2ul6icy000h3gtlx8h07h4y" class="article-share-link">Share</a>
       
       
     </footer>
@@ -138,7 +180,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/11/09/pat甲级1043/" data-id="ck2t5mxdy000hcotl070mjzv8" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/11/09/pat甲级1043/" data-id="ck2ul6icv000f3gtly3w9l0xs" class="article-share-link">Share</a>
       
       
     </footer>
@@ -179,7 +221,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/11/05/pat甲级1093/" data-id="ck2t5mxdz000icotlvqg77fnc" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/11/05/pat甲级1093/" data-id="ck2ul6id0000j3gtlfu6cwq7e" class="article-share-link">Share</a>
       
       
     </footer>
@@ -223,7 +265,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/11/03/pat甲级1038/" data-id="ck2t5mxdu000ecotlq4j0k6g9" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/11/03/pat甲级1038/" data-id="ck2ul6icz000i3gtlxooj1i4l" class="article-share-link">Share</a>
       
       
     </footer>
@@ -268,7 +310,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/30/pat甲级1034/" data-id="ck2t5mxdx000gcotld8peq2ev" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/30/pat甲级1034/" data-id="ck2ul6ict000e3gtlvnh2gim2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -308,7 +350,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/28/pat甲级1033/" data-id="ck2t5mxdt000dcotlzgpv0zbv" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/28/pat甲级1033/" data-id="ck2ul6icp000c3gtlwhqlzpt3" class="article-share-link">Share</a>
       
       
     </footer>
@@ -358,7 +400,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/19/pat甲级1026/" data-id="ck2t5mxdr000bcotlascqbjwv" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/19/pat甲级1026/" data-id="ck2ul6icq000d3gtlru6aep7j" class="article-share-link">Share</a>
       
       
     </footer>
@@ -404,7 +446,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/11/pat甲级1022/" data-id="ck2t5mxdo000acotlotwtg8x2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/11/pat甲级1022/" data-id="ck2ul6icd000a3gtluwlebixd" class="article-share-link">Share</a>
       
       
     </footer>
@@ -450,51 +492,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/07/pat甲级1021/" data-id="ck2t5mxds000ccotlg2zk9qy3" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-pat甲级1020" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/09/29/pat甲级1020/" class="article-date">
-  <time datetime="2019-09-29T09:04:14.000Z" itemprop="datePublished">2019-09-29</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/29/pat甲级1020/">pat甲级1020</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="1009-Product-of-Polynomials-25-point-s"><a href="#1009-Product-of-Polynomials-25-point-s" class="headerlink" title="1009 Product of Polynomials (25 point(s))"></a>1009 Product of Polynomials (25 point(s))</h2><h2 id="原地址"><a href="#原地址" class="headerlink" title="原地址"></a><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805485033603072" target="_blank">原地址</a></h2><h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h2><ol>
-<li>根据中序和后序建立二叉树，再用bfs遍历输出</li>
-</ol>
-<hr>
-<h2 id="不足："><a href="#不足：" class="headerlink" title="不足："></a>不足：</h2><ol>
-<li>刚开始想静态建树，后来放弃而自己指针用的太少不太熟悉</li>
-</ol>
-<hr>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码:"></a>代码:</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">500</span>+<span class="number">5</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF = <span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> eps = <span class="number">1e-6</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span> &#123;</span></span><br><span class="line">	<span class="keyword">int</span> val;</span><br><span class="line">	node *lef,*rig;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; inOrder(maxn),postOrder(maxn);</span><br><span class="line"><span class="built_in">queue</span>&lt;node*&gt; q;</span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="function">node* <span class="title">built</span> <span class="params">(<span class="keyword">int</span> postL,<span class="keyword">int</span> postR,<span class="keyword">int</span> inL,<span class="keyword">int</span> inR)</span> </span>&#123; </span><br><span class="line">	<span class="keyword">if</span> (postL &gt; postR) <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">	<span class="keyword">int</span> pos;</span><br><span class="line">	node *r = <span class="keyword">new</span> node;</span><br><span class="line">	<span class="keyword">if</span> (find(inOrder.begin()+inL,inOrder.begin()+inR,postOrder[postR]) != inOrder.end()) </span><br><span class="line">		pos = find(inOrder.begin()+inL,inOrder.begin()+inR,postOrder[postR]) - inOrder.begin();</span><br><span class="line">	<span class="keyword">int</span> numL = pos - inL;</span><br><span class="line">	r-&gt;val = postOrder[postR];</span><br><span class="line">	r-&gt;lef = built(postL,postL+numL<span class="number">-1</span>,inL,pos<span class="number">-1</span>);</span><br><span class="line">	r-&gt;rig = built(postL+numL,postR<span class="number">-1</span>,pos+<span class="number">1</span>,inR);</span><br><span class="line">	<span class="keyword">return</span> r;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">bfs</span><span class="params">(node *r)</span> </span>&#123;</span><br><span class="line">	q.push(r);<span class="keyword">int</span> cnt = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span>(!q.empty()) &#123;</span><br><span class="line">		node *t = q.front();q.pop();</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d"</span>,t-&gt;val);</span><br><span class="line">		cnt++;</span><br><span class="line">		cnt == n ? : <span class="built_in">printf</span>(<span class="string">" "</span>);</span><br><span class="line">		<span class="keyword">if</span> (t-&gt;lef != <span class="literal">NULL</span>)q.push(t-&gt;lef);</span><br><span class="line">		<span class="keyword">if</span> (t-&gt;rig != <span class="literal">NULL</span>)q.push(t-&gt;rig);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> ONLIGE_JUDGE</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">else</span></span></span><br><span class="line">    <span class="comment">//freopen("H:\\in.txt","r",stdin);</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">// ONLIGE_JUDGE</span></span></span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; <span class="built_in">cin</span> &gt;&gt; postOrder[i++]);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; <span class="built_in">cin</span> &gt;&gt; inOrder[i++]);</span><br><span class="line">	node *r = built(<span class="number">0</span>,n<span class="number">-1</span>,<span class="number">0</span>,n<span class="number">-1</span>);</span><br><span class="line">	bfs(r);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/29/pat甲级1020/" data-id="ck2t5mxdm0009cotl9e7onn74" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/07/pat甲级1021/" data-id="ck2ul6icn000b3gtleohwenu5" class="article-share-link">Share</a>
       
       
     </footer>
@@ -540,6 +538,10 @@
       <ul>
         
           <li>
+            <a href="/2019/11/11/pat甲级1045/">pat甲级1045</a>
+          </li>
+        
+          <li>
             <a href="/2019/11/10/pat甲级1044/">pat甲级1044</a>
           </li>
         
@@ -553,10 +555,6 @@
         
           <li>
             <a href="/2019/11/03/pat甲级1038/">pat甲级1038</a>
-          </li>
-        
-          <li>
-            <a href="/2019/10/30/pat甲级1034/">pat甲级1034</a>
           </li>
         
       </ul>
