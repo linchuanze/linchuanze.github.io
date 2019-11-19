@@ -7,17 +7,17 @@
   
   <title>pat甲级1017 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1009 Product of Polynomials (25 point(s))原地址思路： 平均等待的时间 = 所有受理客户等待时长 / 所有受理客户。用一个数组存储所有窗口的下一个受理时间，客户按早到优先存储到优先队列。弹出客户，如果客户迟于17:00到则不纳入计算，否则若客户早到则受理时间-到达时间，并更新下一个受理时间，若窗口空闲而客户未到，则下一个受理时间为客户到达时间+客户处理时间。">
+  <meta name="description" content="1017 Queueing at Bank (25 point(s))原地址思路： 平均等待的时间 = 所有受理客户等待时长 / 所有受理客户。用一个数组存储所有窗口的下一个受理时间，客户按早到优先存储到优先队列。弹出客户，如果客户迟于17:00到则不纳入计算，否则若客户早到则受理时间-到达时间，并更新下一个受理时间，若窗口空闲而客户未到，则下一个受理时间为客户到达时间+客户处理时间。  可以将时">
 <meta property="og:type" content="article">
 <meta property="og:title" content="pat甲级1017">
 <meta property="og:url" content="http://yoursite.com/2019/09/26/pat甲级1017/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="1009 Product of Polynomials (25 point(s))原地址思路： 平均等待的时间 = 所有受理客户等待时长 / 所有受理客户。用一个数组存储所有窗口的下一个受理时间，客户按早到优先存储到优先队列。弹出客户，如果客户迟于17:00到则不纳入计算，否则若客户早到则受理时间-到达时间，并更新下一个受理时间，若窗口空闲而客户未到，则下一个受理时间为客户到达时间+客户处理时间。">
+<meta property="og:description" content="1017 Queueing at Bank (25 point(s))原地址思路： 平均等待的时间 = 所有受理客户等待时长 / 所有受理客户。用一个数组存储所有窗口的下一个受理时间，客户按早到优先存储到优先队列。弹出客户，如果客户迟于17:00到则不纳入计算，否则若客户早到则受理时间-到达时间，并更新下一个受理时间，若窗口空闲而客户未到，则下一个受理时间为客户到达时间+客户处理时间。  可以将时">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-09-26T12:59:11.496Z">
+<meta property="og:updated_time" content="2019-11-19T12:17:07.409Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="pat甲级1017">
-<meta name="twitter:description" content="1009 Product of Polynomials (25 point(s))原地址思路： 平均等待的时间 = 所有受理客户等待时长 / 所有受理客户。用一个数组存储所有窗口的下一个受理时间，客户按早到优先存储到优先队列。弹出客户，如果客户迟于17:00到则不纳入计算，否则若客户早到则受理时间-到达时间，并更新下一个受理时间，若窗口空闲而客户未到，则下一个受理时间为客户到达时间+客户处理时间。">
+<meta name="twitter:description" content="1017 Queueing at Bank (25 point(s))原地址思路： 平均等待的时间 = 所有受理客户等待时长 / 所有受理客户。用一个数组存储所有窗口的下一个受理时间，客户按早到优先存储到优先队列。弹出客户，如果客户迟于17:00到则不纳入计算，否则若客户早到则受理时间-到达时间，并更新下一个受理时间，若窗口空闲而客户未到，则下一个受理时间为客户到达时间+客户处理时间。  可以将时">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -86,7 +86,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="1009-Product-of-Polynomials-25-point-s"><a href="#1009-Product-of-Polynomials-25-point-s" class="headerlink" title="1009 Product of Polynomials (25 point(s))"></a>1009 Product of Polynomials (25 point(s))</h2><h2 id="原地址"><a href="#原地址" class="headerlink" title="原地址"></a><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805491530579968" target="_blank">原地址</a></h2><h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h2><ol>
+        <h2 id="1017-Queueing-at-Bank-25-point-s"><a href="#1017-Queueing-at-Bank-25-point-s" class="headerlink" title="1017 Queueing at Bank (25 point(s))"></a>1017 Queueing at Bank (25 point(s))</h2><h2 id="原地址"><a href="#原地址" class="headerlink" title="原地址"></a><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805491530579968" target="_blank">原地址</a></h2><h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h2><ol>
 <li>平均等待的时间 = 所有受理客户等待时长 / 所有受理客户。<br>用一个数组存储所有窗口的下一个受理时间，客户按早到优先存储到优先队列。弹出客户，<br>如果客户迟于17:00到则不纳入计算，否则若客户早到则受理时间-到达时间，并更新下一个受理时间，若窗口空闲<br>而客户未到，则下一个受理时间为客户到达时间+客户处理时间。 </li>
 <li>可以将时间先转换成分钟为单位，为避免比较时的浮点误差可以都先*60，最后再除去。</li>
 <li>其实窗口也可以用优先队列存储</li>
@@ -101,7 +101,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/26/pat甲级1017/" data-id="ck2ul6ic400063gtlgbmhysi7" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/09/26/pat甲级1017/" data-id="ck35tjwyy00041gtl25inax77" class="article-share-link">Share</a>
       
       
     </footer>
@@ -159,6 +159,14 @@
       <ul>
         
           <li>
+            <a href="/2019/11/19/pat甲级1107/">pat甲级1107</a>
+          </li>
+        
+          <li>
+            <a href="/2019/11/13/pat甲级1057/">pat甲级1057</a>
+          </li>
+        
+          <li>
             <a href="/2019/11/11/pat甲级1045/">pat甲级1045</a>
           </li>
         
@@ -168,14 +176,6 @@
         
           <li>
             <a href="/2019/11/09/pat甲级1043/">pat甲级1043</a>
-          </li>
-        
-          <li>
-            <a href="/2019/11/05/pat甲级1093/">pat甲级1093</a>
-          </li>
-        
-          <li>
-            <a href="/2019/11/03/pat甲级1038/">pat甲级1038</a>
           </li>
         
       </ul>
