@@ -92,7 +92,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/11/29/pat甲级1051/" data-id="ck3po4acn0019gctlbsc7awn2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/11/29/pat甲级1051/" data-id="ck3rayzw6000w0ctlcr58kgug" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/pat甲级/">pat甲级</a></li></ul>
@@ -134,11 +134,11 @@
 <li>题目没理解，默认序列的最大值是原序列的最大值，居然还有22分。</li>
 </ol>
 <hr>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码:"></a>代码:</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1e5</span>+<span class="number">5</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF = <span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> eps = <span class="number">1e-6</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MOD = <span class="number">1e9</span>+<span class="number">7</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> NIL = <span class="number">-1</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pb push_back</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pp pop_back</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> lowbit(x) ((x)&amp;(-x))</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> mst(a,b) memset(a,b,sizeof(a)) </span></span><br><span class="line"></span><br><span class="line">ll a[maxn];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> ONLIGE_JUDGE</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">else</span></span></span><br><span class="line">    <span class="comment">//freopen("H:\\in.txt","r",stdin);</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">// ONLIGE_JUDGE</span></span></span><br><span class="line">	ll n,p,res = <span class="number">-1</span>;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%lld %lld"</span>,&amp;n,&amp;p);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i) <span class="built_in">cin</span> &gt;&gt; a[i];</span><br><span class="line">	sort(a,a+n);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">		ll t = upper_bound(a + i + <span class="number">1</span>, a + n, a[i] * p) - a - i;</span><br><span class="line">		res = max(res,t);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,res);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码:"></a>代码:</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1e5</span>+<span class="number">5</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF = <span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> eps = <span class="number">1e-6</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MOD = <span class="number">1e9</span>+<span class="number">7</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> NIL = <span class="number">-1</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pb push_back</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pp pop_back</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> lowbit(x) ((x)&amp;(-x))</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> mst(a,b) memset(a,b,sizeof(a)) </span></span><br><span class="line"></span><br><span class="line">ll a[maxn];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> ONLIGE_JUDGE</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">else</span></span></span><br><span class="line">    <span class="comment">//freopen("H:\\in.txt","r",stdin);</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">// ONLIGE_JUDGE</span></span></span><br><span class="line">	ll n,p,res = <span class="number">-1</span>;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%lld %lld"</span>,&amp;n,&amp;p);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i) <span class="built_in">cin</span> &gt;&gt; a[i];</span><br><span class="line">	sort(a,a+n);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">		ll t = upper_bound(a + i + <span class="number">1</span>, a + n, a[i] * p) - a - i; <span class="comment">//从a[i]之后的序列中找第一个大于其p倍的数</span></span><br><span class="line">		res = max(res,t);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,res);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/11/28/pat甲级1085/" data-id="ck3po4ad70025gctlzt1z9lfh" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/11/28/pat甲级1085/" data-id="ck3rayzxo00240ctleimsaxy4" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/pat甲级/">pat甲级</a></li></ul>
@@ -188,7 +188,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/11/28/pat甲级1077/" data-id="ck3po4ad2001xgctlbivxegdd" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/11/28/pat甲级1077/" data-id="ck3rayzxm00220ctlw4eelqut" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/pat甲级/">pat甲级</a></li></ul>
@@ -235,7 +235,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/11/27/pat甲级1153/" data-id="ck3po4adn002igctls03nwfnz" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/11/27/pat甲级1153/" data-id="ck3rayzy0002h0ctltvr9yje0" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/pat甲级/">pat甲级</a></li></ul>
@@ -277,7 +277,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/11/27/pat甲级1152/" data-id="ck3po4adb002dgctlwtozqeqi" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/11/27/pat甲级1152/" data-id="ck3rayzxz002f0ctlkk90j84z" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/pat甲级/">pat甲级</a></li></ul>
@@ -323,7 +323,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/11/27/pat甲级1073/" data-id="ck3po4ad0001vgctlz5rik8qf" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/11/27/pat甲级1073/" data-id="ck3rayzxk001y0ctlj84fdlbe" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/pat甲级/">pat甲级</a></li></ul>
@@ -366,7 +366,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/11/27/pat甲级1069/" data-id="ck3po4acy001rgctll5edgean" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/11/27/pat甲级1069/" data-id="ck3rayzxe001o0ctlagwehp31" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/pat甲级/">pat甲级</a></li></ul>
@@ -408,7 +408,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/11/27/pat甲级1065/" data-id="ck3po4acv001lgctlqsud72iq" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/11/27/pat甲级1065/" data-id="ck3rayzx8001k0ctljbydxwk5" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/pat甲级/">pat甲级</a></li></ul>
@@ -454,7 +454,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/11/27/pat甲级1059/" data-id="ck3po4aco001bgctlrb2git9i" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/11/27/pat甲级1059/" data-id="ck3rayzx3001e0ctlk82jjy9z" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/pat甲级/">pat甲级</a></li></ul>
@@ -497,7 +497,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/11/27/pat甲级1055/" data-id="ck3po4acm0017gctlh4s2mk4s" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/11/27/pat甲级1055/" data-id="ck3rayzwj00180ctlu1g9tqjt" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/pat甲级/">pat甲级</a></li></ul>
