@@ -62,6 +62,49 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-2019广东工业腾讯杯新生赛-G" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/12/10/2019广东工业腾讯杯新生赛-G/" class="article-date">
+  <time datetime="2019-12-10T14:52:54.000Z" itemprop="datePublished">2019-12-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/10/2019广东工业腾讯杯新生赛-G/">2019广东工业腾讯杯新生赛-G(math)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="G-虚数的纸牌"><a href="#G-虚数的纸牌" class="headerlink" title="G-虚数的纸牌"></a>G-虚数的纸牌</h2><h2 id="原地址"><a href="#原地址" class="headerlink" title="原地址"></a><a href="https://ac.nowcoder.com/acm/contest/3036/G" target="_blank">原地址</a></h2><h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h2><ol>
+<li>大佬思路：<img src="/.com//12/10/2019广东工业腾讯杯新生赛-G/solve.png"> 
+</li>
+</ol>
+<hr>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码:"></a>代码:</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1e5</span>+<span class="number">5</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF = <span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> eps = <span class="number">1e-6</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MOD = <span class="number">1e9</span>+<span class="number">7</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> NIL = <span class="number">-1</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pb push_back</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pp pop_back</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> lowbit(x) ((x)&amp;(-x))</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> mst(a,b) memset(a,b,sizeof(a)) </span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> C[<span class="number">10</span>][<span class="number">10</span>];</span><br><span class="line"><span class="keyword">int</span> cnt[<span class="number">100</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">change</span><span class="params">(<span class="keyword">char</span> s)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (s &gt;= <span class="string">'3'</span> &amp;&amp; s &lt;= <span class="string">'9'</span>) <span class="keyword">return</span> s - <span class="string">'0'</span>;</span><br><span class="line">	<span class="keyword">if</span> (s == <span class="string">'0'</span>) <span class="keyword">return</span> <span class="number">10</span>;</span><br><span class="line">	<span class="keyword">if</span> (s == <span class="string">'J'</span>) <span class="keyword">return</span> <span class="number">11</span>;</span><br><span class="line">	<span class="keyword">if</span> (s == <span class="string">'Q'</span>) <span class="keyword">return</span> <span class="number">12</span>;</span><br><span class="line">	<span class="keyword">if</span> (s == <span class="string">'K'</span>) <span class="keyword">return</span> <span class="number">13</span>;</span><br><span class="line">	<span class="keyword">if</span> (s == <span class="string">'A'</span>) <span class="keyword">return</span> <span class="number">14</span>;</span><br><span class="line">	<span class="keyword">if</span> (s == <span class="string">'2'</span>) <span class="keyword">return</span> <span class="number">15</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> ONLIGE_JUDGE</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">else</span></span></span><br><span class="line">    <span class="comment">//freopen("H:\\in.txt","r",stdin);</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">// ONLIGE_JUDGE</span></span></span><br><span class="line">	<span class="keyword">int</span> T;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; T;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= <span class="number">4</span>; ++i) C[i][<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">4</span>; ++i)</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= i; ++j)</span><br><span class="line">			C[i][j] = C[i<span class="number">-1</span>][j] + C[i<span class="number">-1</span>][j<span class="number">-1</span>]; <span class="comment">//组合数c(i,j) </span></span><br><span class="line">	<span class="keyword">while</span> (T--) &#123;</span><br><span class="line">		<span class="built_in">string</span> s;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; s;</span><br><span class="line">		<span class="keyword">int</span> res = s.size(); <span class="comment">//单 </span></span><br><span class="line">		mst(cnt,<span class="number">0</span>);</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s.size(); i++) &#123;</span><br><span class="line">			cnt[change(s[i])]++; <span class="comment">//出现次数 </span></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">3</span>; i &lt;= <span class="number">15</span>; ++i) &#123;</span><br><span class="line">			res += C[cnt[i]][<span class="number">2</span>] + C[cnt[i]][<span class="number">4</span>]; <span class="comment">// 对子+炸弹</span></span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">3</span>; j &lt;= <span class="number">15</span>; ++j) <span class="keyword">if</span> (i != j) &#123;</span><br><span class="line">				res += C[cnt[i]][<span class="number">3</span>] * (C[cnt[j]][<span class="number">1</span>] + C[cnt[j]][<span class="number">2</span>]); <span class="comment">// 三带一、三带二 </span></span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span> (i &lt;= <span class="number">11</span>) &#123;</span><br><span class="line">				<span class="keyword">int</span> t = <span class="number">1</span>;</span><br><span class="line">				<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">5</span>; ++j) <span class="comment">//五单顺子 </span></span><br><span class="line">					t *= cnt[i+j];</span><br><span class="line">				res += t;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125; </span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; res &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/12/10/2019广东工业腾讯杯新生赛-G/" data-id="ck3zzmec90000cgtldx272q8g" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/math/">math</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-2019广东工业腾讯杯新生赛-I" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/12/08/2019广东工业腾讯杯新生赛-I/" class="article-date">
@@ -85,7 +128,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="I-迷途的怪物"><a href="#I-迷途的怪物" class="headerlink" title="I-迷途的怪物"></a>I-迷途的怪物</h2><h2 id="原地址"><a href="#原地址" class="headerlink" title="原地址"></a><a href="https://ac.nowcoder.com/acm/contest/3036/I" target="_blank">原地址</a></h2><h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h2><ol>
-<li>大佬思路：<img src="/2019/12/08/2019广东工业腾讯杯新生赛-I/solve.png" title="This is an image">
+<li>大佬思路：<img src="/.com//12/08/2019广东工业腾讯杯新生赛-I/solve.png" title="This is an image">
 </li>
 </ol>
 <hr>
@@ -93,7 +136,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/12/08/2019广东工业腾讯杯新生赛-I/" data-id="ck3x4dpl2000444tlfk0jvum2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/12/08/2019广东工业腾讯杯新生赛-I/" data-id="ck3zzmecg0001cgtlkj3dd4fx" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/math/">math</a></li></ul>
@@ -128,7 +171,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="J-简单的数学"><a href="#J-简单的数学" class="headerlink" title="J-简单的数学"></a>J-简单的数学</h2><h2 id="原地址"><a href="#原地址" class="headerlink" title="原地址"></a><a href="https://ac.nowcoder.com/acm/contest/3036/J" target="_blank">原地址</a></h2><h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h2><ol>
-<li>大佬思路：<img src="/2019/12/08/2019广东工业腾讯杯新生赛-J/solve.png" title="This is an image">
+<li>大佬思路：<img src="/.com//12/08/2019广东工业腾讯杯新生赛-J/solve.png" title="This is an image">
 </li>
 </ol>
 <hr>
@@ -136,7 +179,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/12/08/2019广东工业腾讯杯新生赛-J/" data-id="ck3x4dpl1000344tlnjkz37f6" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/12/08/2019广东工业腾讯杯新生赛-J/" data-id="ck3zzmecn0005cgtls6ixf9qa" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/math/">math</a></li></ul>
@@ -182,7 +225,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/12/08/2019广东工业腾讯杯新生赛-H/" data-id="ck3x4dpkw000144tlfemclkj1" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/12/08/2019广东工业腾讯杯新生赛-H/" data-id="ck3zzmeck0003cgtl0l8ailzn" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mind/">mind</a></li></ul>
@@ -230,7 +273,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/12/08/2019广东工业腾讯杯新生赛-K/" data-id="ck3x4dpl5000544tlwbtsvr42" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/12/08/2019广东工业腾讯杯新生赛-K/" data-id="ck3zzmecr0008cgtlmtmly3ri" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/math/">math</a></li></ul>
@@ -278,7 +321,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/12/08/2019广东工业腾讯杯新生赛-E/" data-id="ck3x4dpkq000044tl00huhtki" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/12/08/2019广东工业腾讯杯新生赛-E/" data-id="ck3zzmecm0004cgtl4gywwqz0" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mind/">mind</a></li></ul>
@@ -326,7 +369,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/12/03/hdu2602/" data-id="ck3x4dplb000944tlwrtarq99" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/12/03/hdu2602/" data-id="ck3zzmect000acgtl6g4mzu4s" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dp/">dp</a></li></ul>
@@ -372,7 +415,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/12/02/pat甲级1086/" data-id="ck3x4dpmq002k44tl2sagbqoc" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/12/02/pat甲级1086/" data-id="ck3zzmeeg002lcgtl8psllu84" class="article-share-link">Share</a>
       
       
     </footer>
@@ -412,7 +455,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/12/01/pat甲级1078/" data-id="ck3x4dpmo002g44tlk971m2sv" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/12/01/pat甲级1078/" data-id="ck3zzmeed002fcgtl0q08dc8d" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/pat甲级/">pat甲级</a></li></ul>
@@ -458,53 +501,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/11/30/pat甲级1075/" data-id="ck3x4dpmm002c44tlk6wzk7mr" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/pat甲级/">pat甲级</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-pat甲级1071" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/11/30/pat甲级1071/" class="article-date">
-  <time datetime="2019-11-30T09:24:56.000Z" itemprop="datePublished">2019-11-30</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/30/pat甲级1071/">pat甲级1071</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="1071-Speech-Patterns-25-point-s"><a href="#1071-Speech-Patterns-25-point-s" class="headerlink" title="1071 Speech Patterns (25 point(s))"></a>1071 Speech Patterns (25 point(s))</h2><h2 id="原地址"><a href="#原地址" class="headerlink" title="原地址"></a><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805398257647616" target="_blank">原地址</a></h2><h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h2><ol>
-<li>利用map统计出现次数</li>
-</ol>
-<hr>
-<h2 id="我踩的坑点："><a href="#我踩的坑点：" class="headerlink" title="我踩的坑点："></a>我踩的坑点：</h2><ol>
-<li>while(cin&gt;&gt; s)读，处理有一个测试点过不去，不全是用空格分割。应读取一整行处理。</li>
-</ol>
-<hr>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码:"></a>代码:</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1e5</span>+<span class="number">5</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF = <span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> eps = <span class="number">1e-6</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MOD = <span class="number">1e9</span>+<span class="number">7</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> NIL = <span class="number">-1</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pb push_back</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pp pop_back</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> lowbit(x) ((x)&amp;(-x))</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> mst(a,b) memset(a,b,sizeof(a)) </span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> ONLIGE_JUDGE</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">else</span></span></span><br><span class="line">   <span class="comment">// freopen("H:\\in.txt","r",stdin);</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">// ONLIGE_JUDGE</span></span></span><br><span class="line">	<span class="built_in">string</span> s,res;</span><br><span class="line">	<span class="built_in">map</span>&lt;<span class="built_in">string</span>,<span class="keyword">int</span>&gt; um;</span><br><span class="line">	getline(<span class="built_in">cin</span>,s);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s.size(); ++i) &#123;</span><br><span class="line">		<span class="keyword">if</span> (<span class="built_in">isalnum</span>(s[i])) res += <span class="built_in">tolower</span>(s[i]);</span><br><span class="line">		<span class="keyword">if</span> (!<span class="built_in">isalnum</span>(s[i]) || i == s.size() - <span class="number">1</span>)&#123; <span class="comment">//最后一个可能是字母 </span></span><br><span class="line">			<span class="keyword">if</span> (res.size())um[res]++; <span class="comment">//res不为空，空串也会被map记录</span></span><br><span class="line">			res = <span class="string">""</span>;</span><br><span class="line">		&#125; </span><br><span class="line">	&#125; </span><br><span class="line">	<span class="keyword">int</span> maxx = <span class="number">-1</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">auto</span> i : um)</span><br><span class="line">		<span class="keyword">if</span> (i.second &gt; maxx) &#123;</span><br><span class="line">			maxx = i.second;</span><br><span class="line">			res = i.first;</span><br><span class="line">		&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%s %d\n"</span>,res.c_str(),maxx);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/11/30/pat甲级1071/" data-id="ck3x4dpmi002444tluc5ylhyp" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/11/30/pat甲级1075/" data-id="ck3zzmeea002bcgtlc7tkd6m9" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/pat甲级/">pat甲级</a></li></ul>
@@ -566,6 +563,10 @@
       <ul>
         
           <li>
+            <a href="/2019/12/10/2019广东工业腾讯杯新生赛-G/">2019广东工业腾讯杯新生赛-G(math)</a>
+          </li>
+        
+          <li>
             <a href="/2019/12/08/2019广东工业腾讯杯新生赛-I/">2019广东工业腾讯杯新生赛-I(math)</a>
           </li>
         
@@ -579,10 +580,6 @@
         
           <li>
             <a href="/2019/12/08/2019广东工业腾讯杯新生赛-K/">2019广东工业腾讯杯新生赛-K(math)</a>
-          </li>
-        
-          <li>
-            <a href="/2019/12/08/2019广东工业腾讯杯新生赛-E/">2019广东工业腾讯杯新生赛-E(mind)</a>
           </li>
         
       </ul>
