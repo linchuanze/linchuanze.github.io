@@ -93,7 +93,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/12/10/2019广东工业腾讯杯新生赛-G/" data-id="ck3zzmec90000cgtldx272q8g" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/12/10/2019广东工业腾讯杯新生赛-G/" data-id="ck3zzxcme0004dwtle76lzdf5" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/math/">math</a></li></ul>
@@ -136,7 +136,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/12/08/2019广东工业腾讯杯新生赛-I/" data-id="ck3zzmecg0001cgtlkj3dd4fx" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/12/08/2019广东工业腾讯杯新生赛-I/" data-id="ck3zzxcmg0005dwtldb76p870" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/math/">math</a></li></ul>
@@ -171,15 +171,14 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="J-简单的数学"><a href="#J-简单的数学" class="headerlink" title="J-简单的数学"></a>J-简单的数学</h2><h2 id="原地址"><a href="#原地址" class="headerlink" title="原地址"></a><a href="https://ac.nowcoder.com/acm/contest/3036/J" target="_blank">原地址</a></h2><h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h2><ol>
-<li>大佬思路：<img src="/.com//12/08/2019广东工业腾讯杯新生赛-J/solve.png" title="This is an image">
-</li>
+<li>大佬思路：<br><img src="/images/2019%E5%B9%BF%E4%B8%9C%E5%B7%A5%E4%B8%9A%E8%85%BE%E8%AE%AF%E6%9D%AF%E6%96%B0%E7%94%9F%E8%B5%9B-J.png" alt></li>
 </ol>
 <hr>
 <h2 id="代码"><a href="#代码" class="headerlink" title="代码:"></a>代码:</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1e5</span>+<span class="number">5</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF = <span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> eps = <span class="number">1e-6</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MOD = <span class="number">1e9</span>+<span class="number">7</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> NIL = <span class="number">-1</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pb push_back</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pp pop_back</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> lowbit(x) ((x)&amp;(-x))</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> mst(a,b) memset(a,b,sizeof(a)) </span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> ONLIGE_JUDGE</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">else</span></span></span><br><span class="line">   <span class="comment">// freopen("H:\\in.txt","r",stdin);</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">// ONLIGE_JUDGE</span></span></span><br><span class="line">	<span class="keyword">int</span> T;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;T);</span><br><span class="line">	<span class="keyword">while</span>(T--) &#123;</span><br><span class="line">		ll n , res;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%lld"</span>,&amp;n);</span><br><span class="line">		res = n &amp; <span class="number">1</span> ? n * (n + <span class="number">1</span>) : -n * (n +<span class="number">1</span>);</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,res);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;      </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/12/08/2019广东工业腾讯杯新生赛-J/" data-id="ck3zzmecn0005cgtls6ixf9qa" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/12/08/2019广东工业腾讯杯新生赛-J/" data-id="ck3zzxcmd0003dwtlma66065b" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/math/">math</a></li></ul>
@@ -225,7 +224,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/12/08/2019广东工业腾讯杯新生赛-H/" data-id="ck3zzmeck0003cgtl0l8ailzn" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/12/08/2019广东工业腾讯杯新生赛-H/" data-id="ck3zzxcm10000dwtl0rm94zlf" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mind/">mind</a></li></ul>
@@ -273,7 +272,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/12/08/2019广东工业腾讯杯新生赛-K/" data-id="ck3zzmecr0008cgtlmtmly3ri" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/12/08/2019广东工业腾讯杯新生赛-K/" data-id="ck3zzxcmi0008dwtlfvslqt10" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/math/">math</a></li></ul>
@@ -321,7 +320,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/12/08/2019广东工业腾讯杯新生赛-E/" data-id="ck3zzmecm0004cgtl4gywwqz0" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/12/08/2019广东工业腾讯杯新生赛-E/" data-id="ck3zzxcm80001dwtl38gz5vie" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mind/">mind</a></li></ul>
@@ -369,7 +368,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/12/03/hdu2602/" data-id="ck3zzmect000acgtl6g4mzu4s" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/12/03/hdu2602/" data-id="ck3zzxcmj0009dwtlr7au2h2f" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dp/">dp</a></li></ul>
@@ -415,7 +414,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/12/02/pat甲级1086/" data-id="ck3zzmeeg002lcgtl8psllu84" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/12/02/pat甲级1086/" data-id="ck3zzxcoc002rdwtlqkpe8eqx" class="article-share-link">Share</a>
       
       
     </footer>
@@ -455,7 +454,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/12/01/pat甲级1078/" data-id="ck3zzmeed002fcgtl0q08dc8d" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/12/01/pat甲级1078/" data-id="ck3zzxco3002jdwtlb7qu4i73" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/pat甲级/">pat甲级</a></li></ul>
@@ -501,7 +500,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/11/30/pat甲级1075/" data-id="ck3zzmeea002bcgtlc7tkd6m9" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/11/30/pat甲级1075/" data-id="ck3zzxco1002fdwtl1zkyjaub" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/pat甲级/">pat甲级</a></li></ul>
