@@ -62,6 +62,53 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-2019浙工大迎新赛决赛-B" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/12/25/2019浙工大迎新赛决赛-B/" class="article-date">
+  <time datetime="2019-12-25T10:15:26.000Z" itemprop="datePublished">2019-12-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/25/2019浙工大迎新赛决赛-B/">2019浙工大迎新赛决赛-B(搜索)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Inazuma-和团队协作"><a href="#Inazuma-和团队协作" class="headerlink" title="Inazuma 和团队协作"></a>Inazuma 和团队协作</h2><h2 id="原地址"><a href="#原地址" class="headerlink" title="原地址"></a><a href="http://47.96.162.210/problem/1051" target="_blank">原地址</a></h2><h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h2><ol>
+<li>用搜索或状态压缩枚举每道题交给谁做或者不做。<br>对于所有的方案，检验是否合法（智商值、用时）。<br>对于一种做题方案，为了得到最小的罚时，从耗时最短的题目开始做，<br>从所有的方案中得到罚时最小的即为答案。<br>每种题有4种状态，所以方案数做多只有4^11种。</li>
+<li></li>
+</ol>
+<hr>
+<h2 id="我踩的坑点："><a href="#我踩的坑点：" class="headerlink" title="我踩的坑点："></a>我踩的坑点：</h2><ol>
+<li>sum数组时，出现sum[-1]没注意。</li>
+</ol>
+<hr>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码:"></a>代码:</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1e6</span>+<span class="number">5</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF = <span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> eps = <span class="number">1e-6</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MOD = <span class="number">1e9</span>+<span class="number">7</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> NIL = <span class="number">-1</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> pi = <span class="built_in">acos</span>(<span class="number">-1.0</span>);</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> ull;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pb push_back</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pp pop_back</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> lowbit(x) ((x)&amp;(-x))</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> mst(a,b) memset(a,b,sizeof(a)) </span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n, x, y, z, resNum, resTime;</span><br><span class="line"><span class="keyword">int</span> w[<span class="number">3</span>][<span class="number">15</span>],cost[<span class="number">3</span>][<span class="number">15</span>];</span><br><span class="line"><span class="built_in">vector</span>&lt;pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; &gt; path ,t;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(<span class="keyword">const</span> pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; &amp;a, <span class="keyword">const</span> pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; &amp;b)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> a.second &lt; b.second;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> sumX,<span class="keyword">int</span> sumY,<span class="keyword">int</span> sumZ,<span class="keyword">int</span> totalTime,<span class="keyword">int</span> solveNum,<span class="keyword">int</span> dep)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (dep == n) &#123;</span><br><span class="line">		<span class="keyword">if</span> (resNum &lt; solveNum) &#123;</span><br><span class="line">			resNum = solveNum;</span><br><span class="line">			t = path;</span><br><span class="line">			sort(t.begin(),t.end(),cmp);</span><br><span class="line">			<span class="keyword">int</span> sum[<span class="number">15</span>] = &#123;<span class="number">0</span>&#125;,tmp = <span class="number">0</span>;</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; t.size(); ++i) &#123;</span><br><span class="line">				<span class="keyword">if</span> (i == <span class="number">0</span>) sum[i] = t[i].second;</span><br><span class="line">				<span class="keyword">else</span> sum[i] = sum[i<span class="number">-1</span>] + t[i].second;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; path.size(); ++i)</span><br><span class="line">				tmp += sum[i];</span><br><span class="line">			resTime = tmp;</span><br><span class="line">		&#125; <span class="keyword">else</span> <span class="keyword">if</span> (resNum == solveNum) &#123;</span><br><span class="line">			t = path;</span><br><span class="line">			sort(t.begin(),t.end(),cmp);</span><br><span class="line">			<span class="keyword">int</span> sum[<span class="number">15</span>] = &#123;<span class="number">0</span>&#125;,tmp = <span class="number">0</span>;</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; t.size(); ++i) &#123;</span><br><span class="line">				<span class="keyword">if</span> (i == <span class="number">0</span>) sum[i] = t[i].second;</span><br><span class="line">				<span class="keyword">else</span> sum[i] = sum[i<span class="number">-1</span>] + t[i].second;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; path.size(); ++i)</span><br><span class="line">				tmp += sum[i];</span><br><span class="line">			resTime = min(tmp,resTime);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;  </span><br><span class="line">	<span class="keyword">int</span> i = dep;</span><br><span class="line">		<span class="keyword">if</span> (sumX+w[<span class="number">0</span>][i] &lt;= x &amp;&amp; totalTime + cost[<span class="number">0</span>][i] &lt;= <span class="number">300</span>) &#123;</span><br><span class="line">			path.pb(&#123;i,cost[<span class="number">0</span>][i]&#125;);</span><br><span class="line">			dfs(sumX+w[<span class="number">0</span>][i],sumY,sumZ,totalTime+cost[<span class="number">0</span>][i],solveNum+<span class="number">1</span>,dep+<span class="number">1</span>);</span><br><span class="line">			path.pp();</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (sumY+w[<span class="number">1</span>][i] &lt;= y &amp;&amp; totalTime + cost[<span class="number">1</span>][i] &lt;= <span class="number">300</span>) &#123;</span><br><span class="line">			path.pb(&#123;i,cost[<span class="number">1</span>][i]&#125;);</span><br><span class="line">			dfs(sumX,sumY+w[<span class="number">1</span>][i],sumZ,totalTime+cost[<span class="number">1</span>][i],solveNum+<span class="number">1</span>,dep+<span class="number">1</span>);</span><br><span class="line">			path.pp();</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (sumZ+w[<span class="number">2</span>][i] &lt;= z &amp;&amp; totalTime + cost[<span class="number">2</span>][i] &lt;= <span class="number">300</span>) &#123;</span><br><span class="line">			path.pb(&#123;i,cost[<span class="number">2</span>][i]&#125;);</span><br><span class="line">			dfs(sumX,sumY,sumZ+w[<span class="number">2</span>][i],totalTime+cost[<span class="number">2</span>][i],solveNum+<span class="number">1</span>,dep+<span class="number">1</span>);</span><br><span class="line">			path.pp();</span><br><span class="line">		&#125;</span><br><span class="line">		dfs(sumX,sumY,sumZ,totalTime,solveNum,dep+<span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123; </span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> ONLIGE_JUDGE</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">else</span></span></span><br><span class="line">   <span class="comment">// freopen("H:\\in.txt","r",stdin);</span></span><br><span class="line"><span class="comment">//    freopen("H:\\out.txt", "w", stdout);</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">// ONLIGE_JUDGE</span></span></span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d%d%d%d"</span>,&amp;n, &amp;x, &amp;y, &amp;z);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">3</span>; ++j)</span><br><span class="line">			<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;w[j][i],&amp;cost[j][i]);</span><br><span class="line">	&#125;</span><br><span class="line">	dfs(<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d %d\n"</span>,resNum,resTime);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/12/25/2019浙工大迎新赛决赛-B/" data-id="ck4l5i00v0008v8tlpbnyttbx" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/枚举/">枚举</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-2019浙工大迎新赛决赛-E" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/12/22/2019浙工大迎新赛决赛-E/" class="article-date">
@@ -96,7 +143,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/12/22/2019浙工大迎新赛决赛-E/" data-id="ck4h5kptb000c3wtl4ot4stsw" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/12/22/2019浙工大迎新赛决赛-E/" data-id="ck4l5i016000mv8tl1aueevaq" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dp/">dp</a></li></ul>
@@ -142,7 +189,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/12/21/2019浙工大迎新赛决赛-K/" data-id="ck4h5kptn000o3wtlqhop229d" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/12/21/2019浙工大迎新赛决赛-K/" data-id="ck4l5i011000hv8tldxko5kps" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mind/">mind</a></li></ul>
@@ -185,7 +232,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/12/21/2019浙工大迎新赛决赛-D/" data-id="ck4h5kptg000h3wtluwyszfl2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/12/21/2019浙工大迎新赛决赛-D/" data-id="ck4l5i013000jv8tlv76aerk8" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mind/">mind</a></li></ul>
@@ -227,7 +274,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/12/21/2019浙工大迎新赛决赛-I/" data-id="ck4h5kptf000g3wtllymtla6f" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/12/21/2019浙工大迎新赛决赛-I/" data-id="ck4l5i017000ov8tlot5cudgd" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/模拟/">模拟</a></li></ul>
@@ -270,7 +317,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/12/21/cf-1244B/" data-id="ck4h5kptl000l3wtlabkxx0x5" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/12/21/cf-1244B/" data-id="ck4l5i01a000tv8tlbtu77dbo" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mind/">mind</a></li></ul>
@@ -312,7 +359,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/12/20/cf-1245A/" data-id="ck4h5kptj000j3wtl5f58pf2s" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/12/20/cf-1245A/" data-id="ck4l5i019000rv8tltwud0nc2" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/math/">math</a></li></ul>
@@ -353,7 +400,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/12/20/cf-1248A/" data-id="ck4h5kptp000q3wtlqmxgv7pt" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/12/20/cf-1248A/" data-id="ck4l5i01c000wv8tl2f3m0hl4" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/math/">math</a></li></ul>
@@ -398,7 +445,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/12/20/cf-1248B/" data-id="ck4h5kptr000t3wtlusx100q3" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/12/20/cf-1248B/" data-id="ck4l5i01d000yv8tltdb34msv" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/math/">math</a></li></ul>
@@ -439,55 +486,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/12/20/cf-1251A/" data-id="ck4h5kptu000v3wtlommad8u1" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/12/20/cf-1251A/" data-id="ck4l5i01f0013v8tlaw6fuyjr" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mind/">mind</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-cf-1266A" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/12/20/cf-1266A/" class="article-date">
-  <time datetime="2019-12-20T03:11:16.000Z" itemprop="datePublished">2019-12-20</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/20/cf-1266A/">cf-1266A(math)</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="A-Competitive-Programmer"><a href="#A-Competitive-Programmer" class="headerlink" title="A. Competitive Programmer"></a>A. Competitive Programmer</h2><h2 id="原地址"><a href="#原地址" class="headerlink" title="原地址"></a><a href="https://codeforces.com/problemset/problem/1266/A" target="_blank">原地址</a></h2><h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h2><ol>
-<li>大佬思路：<br>Thanks to Chinese remainder theorem, a number is divisible by 60 if and only if it is divisible by 3 and 20.</li>
-</ol>
-<p>A number is divisible by 3 if and only if the sum of its digits is divisible by 3.<br>Note that as the sum doesn’t change if we reorder digits, it applies also to the sum of digits of s.</p>
-<p>A number is divisible by 20 if it ends in 20, 40, 60, 80 or 00.<br>Hence, it is necessary and sufficient if s contains a 0 and then at least one additional even digit.</p>
-<p>Overall, there are three conditions to check:</p>
-<p>The digit sum is divisible by 3.<br>There is at least a single 0.</p>
-<h2 id="There-are-at-least-two-even-digits-including-0s"><a href="#There-are-at-least-two-even-digits-including-0s" class="headerlink" title="There are at least two even digits (including 0s)."></a>There are at least two even digits (including 0s).</h2><h2 id="代码"><a href="#代码" class="headerlink" title="代码:"></a>代码:</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1e5</span>+<span class="number">5</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF = <span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> eps = <span class="number">1e-6</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MOD = <span class="number">1e9</span>+<span class="number">7</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> NIL = <span class="number">-1</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> pi = <span class="built_in">acos</span>(<span class="number">-1.0</span>);</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> ull;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pb push_back</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pp pop_back</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> lowbit(x) ((x)&amp;(-x))</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> mst(a,b) memset(a,b,sizeof(a)) </span></span><br><span class="line"></span><br><span class="line"><span class="keyword">char</span> s[maxn];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123; </span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> ONLIGE_JUDGE</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">else</span></span></span><br><span class="line">    <span class="comment">//freopen("H:\\in.txt","r",stdin);</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">// ONLIGE_JUDGE</span></span></span><br><span class="line">	<span class="keyword">int</span> n;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%s"</span>,s);</span><br><span class="line">		<span class="keyword">int</span> sum = <span class="number">0</span>,g = <span class="number">0</span>;<span class="keyword">bool</span> f = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; s[j]; ++j) &#123;</span><br><span class="line">			sum += s[j] - <span class="string">'0'</span>;</span><br><span class="line">			f |= s[j] == <span class="string">'0'</span>;</span><br><span class="line">			g += (s[j] &amp; <span class="number">1</span>) == <span class="number">0</span>;</span><br><span class="line">		&#125; </span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%s\n"</span>,sum%<span class="number">3</span>==<span class="number">0</span> &amp;&amp; f &amp;&amp; g &gt;= <span class="number">2</span> ? <span class="string">"red"</span> : <span class="string">"cyan"</span>);</span><br><span class="line">	&#125; </span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/12/20/cf-1266A/" data-id="ck4h5kpu200183wtlbpxtf7w9" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/math/">math</a></li></ul>
 
     </footer>
   </div>
@@ -500,7 +502,7 @@
 
   <nav id="page-nav">
     
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
   </nav>
 
 </section>
@@ -524,7 +526,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/dp/" style="font-size: 12.5px;">dp</a> <a href="/tags/math/" style="font-size: 15px;">math</a> <a href="/tags/mind/" style="font-size: 17.5px;">mind</a> <a href="/tags/pat甲级/" style="font-size: 20px;">pat甲级</a> <a href="/tags/枚举/" style="font-size: 10px;">枚举</a> <a href="/tags/模拟/" style="font-size: 10px;">模拟</a>
+      <a href="/tags/dp/" style="font-size: 12.5px;">dp</a> <a href="/tags/math/" style="font-size: 15px;">math</a> <a href="/tags/mind/" style="font-size: 17.5px;">mind</a> <a href="/tags/pat甲级/" style="font-size: 20px;">pat甲级</a> <a href="/tags/枚举/" style="font-size: 12.5px;">枚举</a> <a href="/tags/模拟/" style="font-size: 10px;">模拟</a>
     </div>
   </div>
 
@@ -546,6 +548,10 @@
       <ul>
         
           <li>
+            <a href="/2019/12/25/2019浙工大迎新赛决赛-B/">2019浙工大迎新赛决赛-B(搜索)</a>
+          </li>
+        
+          <li>
             <a href="/2019/12/22/2019浙工大迎新赛决赛-E/">2019浙工大迎新赛决赛-E(dp)</a>
           </li>
         
@@ -559,10 +565,6 @@
         
           <li>
             <a href="/2019/12/21/2019浙工大迎新赛决赛-I/">2019浙工大迎新赛决赛-I(模拟)</a>
-          </li>
-        
-          <li>
-            <a href="/2019/12/21/cf-1244B/">cf-1244B(mind)</a>
           </li>
         
       </ul>
