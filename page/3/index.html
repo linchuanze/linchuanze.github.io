@@ -62,6 +62,92 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-2019广东工业腾讯杯新生赛-L" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/12/11/2019广东工业腾讯杯新生赛-L/" class="article-date">
+  <time datetime="2019-12-11T12:22:49.000Z" itemprop="datePublished">2019-12-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/11/2019广东工业腾讯杯新生赛-L/">2019广东工业腾讯杯新生赛-L(math)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="L-危险的台阶"><a href="#L-危险的台阶" class="headerlink" title="L-危险的台阶"></a>L-危险的台阶</h2><h2 id="原地址"><a href="#原地址" class="headerlink" title="原地址"></a><a href="https://ac.nowcoder.com/acm/contest/3036/L" target="_blank">原地址</a></h2><h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h2><ol>
+<li>大佬思路：<br><img src="/images/2019%E5%B9%BF%E4%B8%9C%E5%B7%A5%E4%B8%9A%E8%85%BE%E8%AE%AF%E6%9D%AF%E6%96%B0%E7%94%9F%E8%B5%9B-L.png" alt></li>
+</ol>
+<hr>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码:"></a>代码:</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1e5</span>+<span class="number">5</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF = <span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> eps = <span class="number">1e-6</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MOD = <span class="number">1e9</span>+<span class="number">7</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> NIL = <span class="number">-1</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pb push_back</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pp pop_back</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> lowbit(x) ((x)&amp;(-x))</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> mst(a,b) memset(a,b,sizeof(a)) </span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> ONLIGE_JUDGE</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">else</span></span></span><br><span class="line">    <span class="comment">//freopen("H:\\in.txt","r",stdin);</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">// ONLIGE_JUDGE</span></span></span><br><span class="line">	<span class="keyword">int</span> n, m;</span><br><span class="line">	<span class="keyword">double</span> L, res = <span class="number">0</span>;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; n &gt;&gt; L &gt;&gt; m;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">		res += L / i / <span class="number">2</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%.4f\n"</span>,res);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/12/11/2019广东工业腾讯杯新生赛-L/" data-id="ck4qykbyc000he0tlv58r7pzw" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/math/">math</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2019广东工业腾讯杯新生赛-G" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/12/10/2019广东工业腾讯杯新生赛-G/" class="article-date">
+  <time datetime="2019-12-10T14:52:54.000Z" itemprop="datePublished">2019-12-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/10/2019广东工业腾讯杯新生赛-G/">2019广东工业腾讯杯新生赛-G(math)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="G-虚数的纸牌"><a href="#G-虚数的纸牌" class="headerlink" title="G-虚数的纸牌"></a>G-虚数的纸牌</h2><h2 id="原地址"><a href="#原地址" class="headerlink" title="原地址"></a><a href="https://ac.nowcoder.com/acm/contest/3036/G" target="_blank">原地址</a></h2><h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h2><ol>
+<li>大佬思路：<br><img src="/images/2019%E5%B9%BF%E4%B8%9C%E5%B7%A5%E4%B8%9A%E8%85%BE%E8%AE%AF%E6%9D%AF%E6%96%B0%E7%94%9F%E8%B5%9B-G.png" alt></li>
+</ol>
+<hr>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码:"></a>代码:</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1e5</span>+<span class="number">5</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF = <span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> eps = <span class="number">1e-6</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MOD = <span class="number">1e9</span>+<span class="number">7</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> NIL = <span class="number">-1</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pb push_back</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pp pop_back</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> lowbit(x) ((x)&amp;(-x))</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> mst(a,b) memset(a,b,sizeof(a)) </span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> C[<span class="number">10</span>][<span class="number">10</span>];</span><br><span class="line"><span class="keyword">int</span> cnt[<span class="number">100</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">change</span><span class="params">(<span class="keyword">char</span> s)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (s &gt;= <span class="string">'3'</span> &amp;&amp; s &lt;= <span class="string">'9'</span>) <span class="keyword">return</span> s - <span class="string">'0'</span>;</span><br><span class="line">	<span class="keyword">if</span> (s == <span class="string">'0'</span>) <span class="keyword">return</span> <span class="number">10</span>;</span><br><span class="line">	<span class="keyword">if</span> (s == <span class="string">'J'</span>) <span class="keyword">return</span> <span class="number">11</span>;</span><br><span class="line">	<span class="keyword">if</span> (s == <span class="string">'Q'</span>) <span class="keyword">return</span> <span class="number">12</span>;</span><br><span class="line">	<span class="keyword">if</span> (s == <span class="string">'K'</span>) <span class="keyword">return</span> <span class="number">13</span>;</span><br><span class="line">	<span class="keyword">if</span> (s == <span class="string">'A'</span>) <span class="keyword">return</span> <span class="number">14</span>;</span><br><span class="line">	<span class="keyword">if</span> (s == <span class="string">'2'</span>) <span class="keyword">return</span> <span class="number">15</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> ONLIGE_JUDGE</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">else</span></span></span><br><span class="line">    <span class="comment">//freopen("H:\\in.txt","r",stdin);</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">// ONLIGE_JUDGE</span></span></span><br><span class="line">	<span class="keyword">int</span> T;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; T;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= <span class="number">4</span>; ++i) C[i][<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">4</span>; ++i)</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= i; ++j)</span><br><span class="line">			C[i][j] = C[i<span class="number">-1</span>][j] + C[i<span class="number">-1</span>][j<span class="number">-1</span>]; <span class="comment">//组合数c(i,j) </span></span><br><span class="line">	<span class="keyword">while</span> (T--) &#123;</span><br><span class="line">		<span class="built_in">string</span> s;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; s;</span><br><span class="line">		<span class="keyword">int</span> res = s.size(); <span class="comment">//单 </span></span><br><span class="line">		mst(cnt,<span class="number">0</span>);</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s.size(); i++) &#123;</span><br><span class="line">			cnt[change(s[i])]++; <span class="comment">//出现次数 </span></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">3</span>; i &lt;= <span class="number">15</span>; ++i) &#123;</span><br><span class="line">			res += C[cnt[i]][<span class="number">2</span>] + C[cnt[i]][<span class="number">4</span>]; <span class="comment">// 对子+炸弹</span></span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">3</span>; j &lt;= <span class="number">15</span>; ++j) <span class="keyword">if</span> (i != j) &#123;</span><br><span class="line">				res += C[cnt[i]][<span class="number">3</span>] * (C[cnt[j]][<span class="number">1</span>] + C[cnt[j]][<span class="number">2</span>]); <span class="comment">// 三带一、三带二 </span></span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span> (i &lt;= <span class="number">11</span>) &#123;</span><br><span class="line">				<span class="keyword">int</span> t = <span class="number">1</span>;</span><br><span class="line">				<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">5</span>; ++j) <span class="comment">//五单顺子 </span></span><br><span class="line">					t *= cnt[i+j];</span><br><span class="line">				res += t;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125; </span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; res &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1e5</span>+<span class="number">5</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF = <span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> eps = <span class="number">1e-6</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MOD = <span class="number">1e9</span>+<span class="number">7</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> NIL = <span class="number">-1</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pb push_back</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pp pop_back</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> lowbit(x) ((x)&amp;(-x))</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> mst(a,b) memset(a,b,sizeof(a)) </span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">change</span><span class="params">(<span class="keyword">char</span> s)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (s &gt;= <span class="string">'3'</span> &amp;&amp; s &lt;= <span class="string">'9'</span>) <span class="keyword">return</span> s - <span class="string">'0'</span>;</span><br><span class="line">	<span class="keyword">if</span> (s == <span class="string">'0'</span>) <span class="keyword">return</span> <span class="number">10</span>;</span><br><span class="line">	<span class="keyword">if</span> (s == <span class="string">'J'</span>) <span class="keyword">return</span> <span class="number">11</span>;</span><br><span class="line">	<span class="keyword">if</span> (s == <span class="string">'Q'</span>) <span class="keyword">return</span> <span class="number">12</span>;</span><br><span class="line">	<span class="keyword">if</span> (s == <span class="string">'K'</span>) <span class="keyword">return</span> <span class="number">13</span>;</span><br><span class="line">	<span class="keyword">if</span> (s == <span class="string">'A'</span>) <span class="keyword">return</span> <span class="number">14</span>;</span><br><span class="line">	<span class="keyword">if</span> (s == <span class="string">'2'</span>) <span class="keyword">return</span> <span class="number">15</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> ONLIGE_JUDGE</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">else</span></span></span><br><span class="line">    <span class="comment">//freopen("H:\\in.txt","r",stdin);</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">// ONLIGE_JUDGE</span></span></span><br><span class="line">	<span class="keyword">int</span> T;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; T;</span><br><span class="line">	<span class="keyword">while</span> (T--) &#123;</span><br><span class="line">		<span class="built_in">string</span> s;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; s;</span><br><span class="line">		<span class="keyword">int</span> res = s.size(); <span class="comment">//单 </span></span><br><span class="line">		<span class="keyword">int</span> a[<span class="number">16</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s.size(); i++) &#123;</span><br><span class="line">			a[change(s[i])]++; <span class="comment">//出现次数 </span></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">3</span>; i &lt;= <span class="number">15</span>; ++i) &#123;</span><br><span class="line">			<span class="keyword">if</span> (a[i] &gt;= <span class="number">2</span>) res += a[i] * (a[i] - <span class="number">1</span>) / <span class="number">2</span>; <span class="comment">//对子,c(i,2)</span></span><br><span class="line">			<span class="keyword">if</span> (a[i] == <span class="number">4</span>) &#123;</span><br><span class="line">				res++; <span class="comment">//炸弹</span></span><br><span class="line">				res += <span class="number">4</span> * (s.size() - <span class="number">4</span>); <span class="comment">//三带一,减去自己的4张 </span></span><br><span class="line">				<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">3</span>; j &lt;= <span class="number">15</span>; ++j) <span class="keyword">if</span> (i != j) &#123;</span><br><span class="line">					res += <span class="number">4</span> * a[j] * (a[j] - <span class="number">1</span>) / <span class="number">2</span>; <span class="comment">//三带二 </span></span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span> (a[i] == <span class="number">3</span>) &#123;</span><br><span class="line">				res += s.size() - <span class="number">3</span>; <span class="comment">//三带一</span></span><br><span class="line">				<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">3</span>; j &lt;= <span class="number">15</span>; ++j) <span class="keyword">if</span> (i != j) &#123;</span><br><span class="line">					res += a[j] * (a[j] - <span class="number">1</span>) / <span class="number">2</span>; <span class="comment">//三带二 </span></span><br><span class="line">				&#125; </span><br><span class="line">			&#125; </span><br><span class="line">			<span class="keyword">if</span> (i &lt;= <span class="number">11</span>) &#123;</span><br><span class="line">				<span class="keyword">int</span> t = <span class="number">1</span>;</span><br><span class="line">				<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">5</span>; ++j) <span class="comment">//五单顺子 </span></span><br><span class="line">					t *= a[i+j];</span><br><span class="line">				res += t;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125; </span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; res &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/12/10/2019广东工业腾讯杯新生赛-G/" data-id="ck4qykby8000ce0tloym5np5a" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/math/">math</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-2019广东工业腾讯杯新生赛-I" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/12/08/2019广东工业腾讯杯新生赛-I/" class="article-date">
@@ -92,7 +178,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/12/08/2019广东工业腾讯杯新生赛-I/" data-id="ck4l5i00p0003v8tlrv0lfhzd" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/12/08/2019广东工业腾讯杯新生赛-I/" data-id="ck4qykby50009e0tlosya0fu2" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/math/">math</a></li></ul>
@@ -134,7 +220,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/12/08/2019广东工业腾讯杯新生赛-J/" data-id="ck4l5i00w000av8tl950ktbui" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/12/08/2019广东工业腾讯杯新生赛-J/" data-id="ck4qykby6000ae0tl59or72mr" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/math/">math</a></li></ul>
@@ -180,7 +266,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/12/08/2019广东工业腾讯杯新生赛-H/" data-id="ck4l5i00s0005v8tl87gohny2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/12/08/2019广东工业腾讯杯新生赛-H/" data-id="ck4qykbxh0001e0tlplobf99j" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mind/">mind</a></li></ul>
@@ -228,7 +314,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/12/08/2019广东工业腾讯杯新生赛-K/" data-id="ck4l5i00y000dv8tlw94nzj31" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/12/08/2019广东工业腾讯杯新生赛-K/" data-id="ck4qykby9000de0tlyysbvhmj" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/math/">math</a></li></ul>
@@ -276,7 +362,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/12/08/2019广东工业腾讯杯新生赛-E/" data-id="ck4l5i00m0001v8tl4lbo6x9c" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/12/08/2019广东工业腾讯杯新生赛-E/" data-id="ck4qykbxb0000e0tlqxevag8s" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mind/">mind</a></li></ul>
@@ -324,7 +410,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/12/03/hdu2602/" data-id="ck4l5i01o001hv8tlpet0mc2b" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/12/03/hdu2602/" data-id="ck4qykbyz001he0tlh9qob30v" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dp/">dp</a></li></ul>
@@ -370,7 +456,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/12/02/pat甲级1086/" data-id="ck4l5i02w003kv8tl3c64c9yz" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/12/02/pat甲级1086/" data-id="ck4qykc0f003te0tlerr66q9g" class="article-share-link">Share</a>
       
       
     </footer>
@@ -410,99 +496,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/12/01/pat甲级1078/" data-id="ck4l5i02r003av8tlpd9w9axh" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/pat甲级/">pat甲级</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-pat甲级1075" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/11/30/pat甲级1075/" class="article-date">
-  <time datetime="2019-11-30T14:28:30.000Z" itemprop="datePublished">2019-11-30</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/30/pat甲级1075/">pat甲级1075</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="1075-PAT-Judge-25-point-s"><a href="#1075-PAT-Judge-25-point-s" class="headerlink" title="1075 PAT Judge (25 point(s))"></a>1075 PAT Judge (25 point(s))</h2><h2 id="原地址"><a href="#原地址" class="headerlink" title="原地址"></a><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805393241260032" target="_blank">原地址</a></h2><h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h2><ol>
-<li>模拟</li>
-</ol>
-<hr>
-<h2 id="我踩的坑点："><a href="#我踩的坑点：" class="headerlink" title="我踩的坑点："></a>我踩的坑点：</h2><ol>
-<li>脑抽，刚开始我以为用vector会超时后来用map发现不好赋初值，不好把每题分数输出。</li>
-</ol>
-<hr>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码:"></a>代码:</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1e5</span>+<span class="number">5</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF = <span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> eps = <span class="number">1e-6</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MOD = <span class="number">1e9</span>+<span class="number">7</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> NIL = <span class="number">-1</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pb push_back</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pp pop_back</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> lowbit(x) ((x)&amp;(-x))</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> mst(a,b) memset(a,b,sizeof(a)) </span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span>&#123;</span></span><br><span class="line">	<span class="keyword">int</span> id,total,num,rank;</span><br><span class="line">	<span class="keyword">bool</span> flag;</span><br><span class="line">	<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; v;</span><br><span class="line">&#125;a[maxn]; </span><br><span class="line"><span class="keyword">int</span> p[maxn];</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(<span class="keyword">const</span> node &amp;a, <span class="keyword">const</span> node &amp;b)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (a.total != b.total) <span class="keyword">return</span> a.total &gt; b.total;</span><br><span class="line">	<span class="keyword">if</span> (a.num != b.num) <span class="keyword">return</span> a.num &gt; b.num;</span><br><span class="line">	<span class="keyword">return</span> a.id &lt; b.id; </span><br><span class="line">&#125; </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> ONLIGE_JUDGE</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">else</span></span></span><br><span class="line">    <span class="comment">//freopen("H:\\in.txt","r",stdin);</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">// ONLIGE_JUDGE</span></span></span><br><span class="line">	<span class="keyword">int</span> n, k , m, pid, score, id;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>, &amp;n, &amp;k, &amp;m);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= k; ++i)</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d"</span>,p+i);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) a[i].v.resize(k+<span class="number">1</span>,<span class="number">-2</span>);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; ++i) &#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>, &amp;id , &amp;pid, &amp;score);</span><br><span class="line">		a[id].id = id;</span><br><span class="line">		a[id].v[pid] = max (score,a[id].v[pid]);</span><br><span class="line">		<span class="keyword">if</span> (score != <span class="number">-1</span>) a[id].flag = <span class="literal">true</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= k; ++j) &#123;</span><br><span class="line">			<span class="keyword">if</span> (a[i].v[j] &gt; <span class="number">0</span>) a[i].total += a[i].v[j];</span><br><span class="line">		 	<span class="keyword">if</span> (p[j] == a[i].v[j]) a[i].num++;</span><br><span class="line">		&#125;</span><br><span class="line">	sort(a+<span class="number">1</span>,a+n+<span class="number">1</span>,cmp);</span><br><span class="line">	a[<span class="number">1</span>].rank = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">		<span class="keyword">if</span> (a[i].total == a[i<span class="number">-1</span>].total) a[i].rank = a[i<span class="number">-1</span>].rank;</span><br><span class="line">		<span class="keyword">else</span> a[i].rank = i;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) <span class="keyword">if</span> (a[i].flag) &#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d %05d %d "</span>,a[i].rank, a[i].id, a[i].total);</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= k; <span class="built_in">printf</span>(<span class="string">"%c"</span>,j == k ? <span class="string">'\n'</span> : <span class="string">' '</span>),++j)</span><br><span class="line">			<span class="keyword">if</span> (a[i].v[j] &gt;= <span class="number">0</span>) <span class="built_in">printf</span>(<span class="string">"%d"</span>,a[i].v[j]);</span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span> (a[i].v[j] == <span class="number">-1</span>) <span class="built_in">printf</span>(<span class="string">"0"</span>);</span><br><span class="line">			<span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">"-"</span>);</span><br><span class="line">	&#125;	</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/11/30/pat甲级1075/" data-id="ck4l5i02s003cv8tl4iqnxljs" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/pat甲级/">pat甲级</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-pat甲级1071" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/11/30/pat甲级1071/" class="article-date">
-  <time datetime="2019-11-30T09:24:56.000Z" itemprop="datePublished">2019-11-30</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/30/pat甲级1071/">pat甲级1071</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="1071-Speech-Patterns-25-point-s"><a href="#1071-Speech-Patterns-25-point-s" class="headerlink" title="1071 Speech Patterns (25 point(s))"></a>1071 Speech Patterns (25 point(s))</h2><h2 id="原地址"><a href="#原地址" class="headerlink" title="原地址"></a><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805398257647616" target="_blank">原地址</a></h2><h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h2><ol>
-<li>利用map统计出现次数</li>
-</ol>
-<hr>
-<h2 id="我踩的坑点："><a href="#我踩的坑点：" class="headerlink" title="我踩的坑点："></a>我踩的坑点：</h2><ol>
-<li>while(cin&gt;&gt; s)读，处理有一个测试点过不去，不全是用空格分割。应读取一整行处理。</li>
-</ol>
-<hr>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码:"></a>代码:</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1e5</span>+<span class="number">5</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF = <span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> eps = <span class="number">1e-6</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MOD = <span class="number">1e9</span>+<span class="number">7</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> NIL = <span class="number">-1</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pb push_back</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pp pop_back</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> lowbit(x) ((x)&amp;(-x))</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> mst(a,b) memset(a,b,sizeof(a)) </span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> ONLIGE_JUDGE</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">else</span></span></span><br><span class="line">   <span class="comment">// freopen("H:\\in.txt","r",stdin);</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">// ONLIGE_JUDGE</span></span></span><br><span class="line">	<span class="built_in">string</span> s,res;</span><br><span class="line">	<span class="built_in">map</span>&lt;<span class="built_in">string</span>,<span class="keyword">int</span>&gt; um;</span><br><span class="line">	getline(<span class="built_in">cin</span>,s);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s.size(); ++i) &#123;</span><br><span class="line">		<span class="keyword">if</span> (<span class="built_in">isalnum</span>(s[i])) res += <span class="built_in">tolower</span>(s[i]);</span><br><span class="line">		<span class="keyword">if</span> (!<span class="built_in">isalnum</span>(s[i]) || i == s.size() - <span class="number">1</span>)&#123; <span class="comment">//最后一个可能是字母 </span></span><br><span class="line">			<span class="keyword">if</span> (res.size())um[res]++; <span class="comment">//res不为空，空串也会被map记录</span></span><br><span class="line">			res = <span class="string">""</span>;</span><br><span class="line">		&#125; </span><br><span class="line">	&#125; </span><br><span class="line">	<span class="keyword">int</span> maxx = <span class="number">-1</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">auto</span> i : um)</span><br><span class="line">		<span class="keyword">if</span> (i.second &gt; maxx) &#123;</span><br><span class="line">			maxx = i.second;</span><br><span class="line">			res = i.first;</span><br><span class="line">		&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%s %d\n"</span>,res.c_str(),maxx);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/11/30/pat甲级1071/" data-id="ck4l5i02n0034v8tlflmoti82" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/12/01/pat甲级1078/" data-id="ck4qykc0c003pe0tlstnns7x1" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/pat甲级/">pat甲级</a></li></ul>
@@ -532,7 +526,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/dp/">dp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/math/">math</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mind/">mind</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pat甲级/">pat甲级</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/枚举/">枚举</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/模拟/">模拟</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/dp/">dp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/math/">math</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mind/">mind</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pat甲级/">pat甲级</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/暴搜/">暴搜</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/枚举/">枚举</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/模拟/">模拟</a></li></ul>
     </div>
   </div>
 
@@ -542,7 +536,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/dp/" style="font-size: 12.5px;">dp</a> <a href="/tags/math/" style="font-size: 15px;">math</a> <a href="/tags/mind/" style="font-size: 17.5px;">mind</a> <a href="/tags/pat甲级/" style="font-size: 20px;">pat甲级</a> <a href="/tags/枚举/" style="font-size: 12.5px;">枚举</a> <a href="/tags/模拟/" style="font-size: 10px;">模拟</a>
+      <a href="/tags/dp/" style="font-size: 12.5px;">dp</a> <a href="/tags/math/" style="font-size: 15px;">math</a> <a href="/tags/mind/" style="font-size: 17.5px;">mind</a> <a href="/tags/pat甲级/" style="font-size: 20px;">pat甲级</a> <a href="/tags/暴搜/" style="font-size: 10px;">暴搜</a> <a href="/tags/枚举/" style="font-size: 10px;">枚举</a> <a href="/tags/模拟/" style="font-size: 10px;">模拟</a>
     </div>
   </div>
 
@@ -564,6 +558,14 @@
       <ul>
         
           <li>
+            <a href="/2019/12/29/pat甲级1049/">pat甲级1049</a>
+          </li>
+        
+          <li>
+            <a href="/2019/12/27/2019浙工大迎新赛决赛-C/">2019浙工大迎新赛决赛-C(math/三分)</a>
+          </li>
+        
+          <li>
             <a href="/2019/12/25/2019浙工大迎新赛决赛-B/">2019浙工大迎新赛决赛-B(搜索)</a>
           </li>
         
@@ -573,14 +575,6 @@
         
           <li>
             <a href="/2019/12/21/2019浙工大迎新赛决赛-K/">2019浙工大迎新赛决赛-K(mind)</a>
-          </li>
-        
-          <li>
-            <a href="/2019/12/21/2019浙工大迎新赛决赛-D/">2019浙工大迎新赛决赛-D(mind)</a>
-          </li>
-        
-          <li>
-            <a href="/2019/12/21/2019浙工大迎新赛决赛-I/">2019浙工大迎新赛决赛-I(模拟)</a>
           </li>
         
       </ul>

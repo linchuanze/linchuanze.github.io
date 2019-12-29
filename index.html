@@ -62,6 +62,91 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-pat甲级1049" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/12/29/pat甲级1049/" class="article-date">
+  <time datetime="2019-12-29T11:07:03.000Z" itemprop="datePublished">2019-12-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/29/pat甲级1049/">pat甲级1049</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1049-Counting-Ones-30point-s"><a href="#1049-Counting-Ones-30point-s" class="headerlink" title="1049 Counting Ones (30point(s))"></a>1049 Counting Ones (30point(s))</h2><h2 id="原地址"><a href="#原地址" class="headerlink" title="原地址"></a><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805430595731456" target="_blank">原地址</a></h2><h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h2><ol>
+<li><a href="https://www.cnblogs.com/cyjb/p/digitOccurrenceInRegion.html" target="_blank">大佬博客</a></li>
+</ol>
+<hr>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码:"></a>代码:</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1e6</span>+<span class="number">5</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF = <span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> eps = <span class="number">1e-8</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MOD = <span class="number">1e9</span>+<span class="number">7</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> NIL = <span class="number">-1</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> pi = <span class="built_in">acos</span>(<span class="number">-1.0</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> ull;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pb push_back</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pp pop_back</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> lowbit(x) ((x)&amp;(-x))</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> mst(a,b) memset(a,b,sizeof(a)) </span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">solve</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> cnt = <span class="number">0</span>,k;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; k = n / i; i *= <span class="number">10</span>) &#123;</span><br><span class="line">		cnt += (k / <span class="number">10</span>) * i;</span><br><span class="line">		<span class="keyword">int</span> cur = k % <span class="number">10</span>;</span><br><span class="line">		<span class="keyword">if</span> (cur &gt; <span class="number">1</span>) &#123;</span><br><span class="line">			cnt += i;</span><br><span class="line">		&#125; <span class="keyword">else</span> <span class="keyword">if</span> (cur == <span class="number">1</span>) &#123;</span><br><span class="line">			cnt += n - k * i + <span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> cnt;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123; </span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> ONLIGE_JUDGE</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">else</span></span></span><br><span class="line">  <span class="comment">//  freopen("H:\\in.txt","r",stdin);</span></span><br><span class="line"><span class="comment">//    freopen("H:\\out.txt", "w", stdout);</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">// ONLIGE_JUDGE</span></span></span><br><span class="line">	<span class="keyword">int</span> n, t;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d\n"</span>,solve(n));</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/12/29/pat甲级1049/" data-id="ck4qykbzn002je0tlc68qeadg" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mind/">mind</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2019浙工大迎新赛决赛-C" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/12/27/2019浙工大迎新赛决赛-C/" class="article-date">
+  <time datetime="2019-12-27T11:10:20.000Z" itemprop="datePublished">2019-12-27</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/27/2019浙工大迎新赛决赛-C/">2019浙工大迎新赛决赛-C(math/三分)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Suzukaze-与伤害预期"><a href="#Suzukaze-与伤害预期" class="headerlink" title="Suzukaze 与伤害预期"></a>Suzukaze 与伤害预期</h2><h2 id="原地址"><a href="#原地址" class="headerlink" title="原地址"></a><a href="http://47.96.162.210/problem/1052" target="_blank">原地址</a></h2><h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h2><ol>
+<li>大佬思路：<br><img src="/images/2019%E6%B5%99%E5%B7%A5%E5%A4%A7%E8%BF%8E%E6%96%B0%E8%B5%9B%E5%86%B3%E8%B5%9B-C.png" alt></li>
+<li>计算导函数的对称抽，发现大于n，其实只用只用比较0、n、和(0,n)之间的极值点，哪个大选哪个。</li>
+</ol>
+<hr>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码:"></a>代码:</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1e6</span>+<span class="number">5</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF = <span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> eps = <span class="number">1e-8</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MOD = <span class="number">1e9</span>+<span class="number">7</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> NIL = <span class="number">-1</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> pi = <span class="built_in">acos</span>(<span class="number">-1.0</span>);</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> ull;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pb push_back</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pp pop_back</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> lowbit(x) ((x)&amp;(-x))</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> mst(a,b) memset(a,b,sizeof(a)) </span></span><br><span class="line"></span><br><span class="line"><span class="keyword">double</span> d, h, f, n, x, y;</span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">F</span><span class="params">(<span class="keyword">double</span> a)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> (h + (n - a) * y) / (h + (n - a) * y + f) * (d + a * x);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">threeDiv</span><span class="params">(<span class="keyword">double</span> l,<span class="keyword">double</span> r)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">double</span> mid, midr,ans;</span><br><span class="line">	<span class="keyword">while</span> (<span class="built_in">fabs</span>(r - l) &gt; eps) &#123;</span><br><span class="line">		mid = (r - l) / <span class="number">2</span> + l;</span><br><span class="line">		midr = (r - mid) / <span class="number">2</span> + mid;</span><br><span class="line">		<span class="keyword">if</span> (F(mid)&lt;F(midr)) l = mid ;</span><br><span class="line">		<span class="keyword">else</span> r = midr;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> l;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123; </span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> ONLIGE_JUDGE</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">else</span></span></span><br><span class="line">   <span class="comment">// freopen("H:\\in.txt","r",stdin);</span></span><br><span class="line"><span class="comment">//    freopen("H:\\out.txt", "w", stdout);</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">// ONLIGE_JUDGE</span></span></span><br><span class="line">	<span class="keyword">int</span> T;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;T);</span><br><span class="line">	<span class="keyword">while</span> (T--) &#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%lf %lf %lf %lf %lf %lf"</span>,&amp;d, &amp;h, &amp;f, &amp;n, &amp;x, &amp;y);</span><br><span class="line">		<span class="keyword">double</span> x1 = threeDiv(<span class="number">0</span>,n);</span><br><span class="line">		<span class="keyword">int</span> maxx = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">if</span> (F(<span class="number">0</span>) &gt; F(n)) &#123;</span><br><span class="line">			maxx = <span class="number">0</span>;</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			maxx = n;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (F(<span class="built_in">floor</span>(x1)) &gt; F(maxx)) &#123;</span><br><span class="line">			maxx = <span class="built_in">floor</span>(x1);</span><br><span class="line">		&#125; </span><br><span class="line">		<span class="keyword">if</span> (F(<span class="built_in">ceil</span>(x1)) &gt; F(maxx)) &#123;</span><br><span class="line">			maxx = <span class="built_in">ceil</span>(x1);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d %d\n"</span>,maxx, (<span class="keyword">int</span>)n - maxx);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/12/27/2019浙工大迎新赛决赛-C/" data-id="ck4qykbyl000re0tlvz5el1uh" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/math/">math</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-2019浙工大迎新赛决赛-B" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/12/25/2019浙工大迎新赛决赛-B/" class="article-date">
@@ -86,7 +171,6 @@
       
         <h2 id="Inazuma-和团队协作"><a href="#Inazuma-和团队协作" class="headerlink" title="Inazuma 和团队协作"></a>Inazuma 和团队协作</h2><h2 id="原地址"><a href="#原地址" class="headerlink" title="原地址"></a><a href="http://47.96.162.210/problem/1051" target="_blank">原地址</a></h2><h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h2><ol>
 <li>用搜索或状态压缩枚举每道题交给谁做或者不做。<br>对于所有的方案，检验是否合法（智商值、用时）。<br>对于一种做题方案，为了得到最小的罚时，从耗时最短的题目开始做，<br>从所有的方案中得到罚时最小的即为答案。<br>每种题有4种状态，所以方案数做多只有4^11种。</li>
-<li></li>
 </ol>
 <hr>
 <h2 id="我踩的坑点："><a href="#我踩的坑点：" class="headerlink" title="我踩的坑点："></a>我踩的坑点：</h2><ol>
@@ -97,10 +181,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/12/25/2019浙工大迎新赛决赛-B/" data-id="ck4l5i00v0008v8tlpbnyttbx" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/12/25/2019浙工大迎新赛决赛-B/" data-id="ck4qykbya000ee0tlt1a87v6r" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/枚举/">枚举</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/暴搜/">暴搜</a></li></ul>
 
     </footer>
   </div>
@@ -143,7 +227,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/12/22/2019浙工大迎新赛决赛-E/" data-id="ck4l5i016000mv8tl1aueevaq" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/12/22/2019浙工大迎新赛决赛-E/" data-id="ck4qykbyi000me0tljbl5tman" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dp/">dp</a></li></ul>
@@ -189,7 +273,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/12/21/2019浙工大迎新赛决赛-K/" data-id="ck4l5i011000hv8tldxko5kps" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/12/21/2019浙工大迎新赛决赛-K/" data-id="ck4qykbym000te0tlgnh8foqr" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mind/">mind</a></li></ul>
@@ -232,7 +316,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/12/21/2019浙工大迎新赛决赛-D/" data-id="ck4l5i013000jv8tlv76aerk8" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/12/21/2019浙工大迎新赛决赛-D/" data-id="ck4qykbye000je0tlx7t3ykeh" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mind/">mind</a></li></ul>
@@ -274,7 +358,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/12/21/2019浙工大迎新赛决赛-I/" data-id="ck4l5i017000ov8tlot5cudgd" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/12/21/2019浙工大迎新赛决赛-I/" data-id="ck4qykbyj000oe0tltj7ovtcd" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/模拟/">模拟</a></li></ul>
@@ -317,7 +401,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/12/21/cf-1244B/" data-id="ck4l5i01a000tv8tlbtu77dbo" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/12/21/cf-1244B/" data-id="ck4qykbyp000ye0tlq7qb6fc5" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mind/">mind</a></li></ul>
@@ -359,7 +443,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/12/20/cf-1245A/" data-id="ck4l5i019000rv8tltwud0nc2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/12/20/cf-1245A/" data-id="ck4qykbyr0011e0tlbmohdfmz" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/math/">math</a></li></ul>
@@ -400,96 +484,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/12/20/cf-1248A/" data-id="ck4l5i01c000wv8tl2f3m0hl4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/12/20/cf-1248A/" data-id="ck4qykbyo000we0tlenqla506" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/math/">math</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-cf-1248B" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/12/20/cf-1248B/" class="article-date">
-  <time datetime="2019-12-20T08:46:29.000Z" itemprop="datePublished">2019-12-20</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/20/cf-1248B/">cf-1248B(math)</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="B-Grow-The-Tree"><a href="#B-Grow-The-Tree" class="headerlink" title="B. Grow The Tree"></a>B. Grow The Tree</h2><h2 id="原地址"><a href="#原地址" class="headerlink" title="原地址"></a><a href="https://codeforces.com/problemset/problem/1248/B" target="_blank">原地址</a></h2><h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h2><ol>
-<li>At first, let’s do some maths. Consider having an expression a2+b2 which we have to maximize, while a+b=C,<br>where C is some constant. Let’s proof that the maximum is achieved when a or b is maximum possible.</li>
-</ol>
-<p>At first let a or b be about the same, while a≥b. Let’s see what happens when we add 1 to a and subtract 1 from b.<br>(a+1)2+(b−1)2=a2+2a+1+b2−2b+1=a2+b2+2(a−b+1). Since a≥b, this expression is greater than a2+b2.<br>It means that we should maximize a (or b, doing the same steps) in order to achieve the maximum of a2+b2.</p>
-<p>Notice that we should always grow the tree in one direction. For definiteness,<br>let horizontal sticks go from left to right and vertical from down to top.<br>Now, answer equals to square of the sum of lengths of horizontal sticks plus square of the sum of lengths of vertical sticks.<br>As we proved earlier, to maximize this expression, we should maximize one of the numbers under the squares.</p>
-<p>Let’s sort sticks by order and orient the half (and medium element if there’s an odd amount of sticks)<br>with the greater length vertically, and the other half horizontally.</p>
-<p>Work time: O(nlogn)</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码:"></a>代码:</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1e5</span>+<span class="number">5</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF = <span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> eps = <span class="number">1e-6</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MOD = <span class="number">1e9</span>+<span class="number">7</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> NIL = <span class="number">-1</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> pi = <span class="built_in">acos</span>(<span class="number">-1.0</span>);</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> ull;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pb push_back</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pp pop_back</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> lowbit(x) ((x)&amp;(-x))</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> mst(a,b) memset(a,b,sizeof(a)) </span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> a[maxn];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123; </span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> ONLIGE_JUDGE</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">else</span></span></span><br><span class="line">   <span class="comment">// freopen("H:\\in.txt","r",stdin);</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">// ONLIGE_JUDGE</span></span></span><br><span class="line">	<span class="keyword">int</span> n, x = <span class="number">0</span>, y = <span class="number">0</span>, i;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i)</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d"</span>,a+i);</span><br><span class="line">	sort(a,a+n);</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; n / <span class="number">2</span>; ++i)</span><br><span class="line">		x += a[i];</span><br><span class="line">	<span class="keyword">for</span> (;i &lt; n; ++i)</span><br><span class="line">		y += a[i];</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%lld"</span>,(ll)x * x + (ll)y * y);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/12/20/cf-1248B/" data-id="ck4l5i01d000yv8tltdb34msv" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/math/">math</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-cf-1251A" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/12/20/cf-1251A/" class="article-date">
-  <time datetime="2019-12-20T06:01:15.000Z" itemprop="datePublished">2019-12-20</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/20/cf-1251A/">cf-1251A(mind)</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="A-Broken-Keyboard"><a href="#A-Broken-Keyboard" class="headerlink" title="A. Broken Keyboard"></a>A. Broken Keyboard</h2><h2 id="原地址"><a href="#原地址" class="headerlink" title="原地址"></a><a href="https://codeforces.com/problemset/problem/1251/A" target="_blank">原地址</a></h2><h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h2><ol>
-<li>大佬思路：<br>If a key malfunctions, each sequence of presses of this key gives a string with even number of characters.<br>So, if there is a substring consisting of odd number of equal characters c,<br>such that it cannot be extended to the left or to the right without adding other characters,<br>then it could not be produced by presses of button c if c was malfunctioning.</li>
-</ol>
-<h2 id="The-only-thing-that’s-left-is-to-find-all-maximal-by-inclusion-substrings-consisting-of-the-same-character"><a href="#The-only-thing-that’s-left-is-to-find-all-maximal-by-inclusion-substrings-consisting-of-the-same-character" class="headerlink" title="The only thing that’s left is to find all maximal by inclusion substrings consisting of the same character."></a>The only thing that’s left is to find all maximal by inclusion substrings consisting of the same character.</h2><h2 id="代码"><a href="#代码" class="headerlink" title="代码:"></a>代码:</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1e5</span>+<span class="number">5</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF = <span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> eps = <span class="number">1e-6</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MOD = <span class="number">1e9</span>+<span class="number">7</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> NIL = <span class="number">-1</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> pi = <span class="built_in">acos</span>(<span class="number">-1.0</span>);</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> ull;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pb push_back</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pp pop_back</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> lowbit(x) ((x)&amp;(-x))</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> mst(a,b) memset(a,b,sizeof(a)) </span></span><br><span class="line"></span><br><span class="line"><span class="keyword">bool</span> ans[<span class="number">26</span>];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	mst(ans,<span class="number">0</span>);</span><br><span class="line">	<span class="built_in">string</span> s;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; s;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s.size();) &#123;</span><br><span class="line">		<span class="keyword">int</span> j = i;</span><br><span class="line">		<span class="keyword">while</span> (j + <span class="number">1</span> &lt; s.size() &amp;&amp; s[j+<span class="number">1</span>] == s[i]) j++;</span><br><span class="line">		<span class="keyword">if</span> ((j - i) % <span class="number">2</span> == <span class="number">0</span>) &#123;</span><br><span class="line">			ans[s[i] - <span class="string">'a'</span>] = <span class="literal">true</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		i = j + <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">26</span>; ++i) <span class="keyword">if</span>(ans[i]) &#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%c"</span>,<span class="string">'a'</span>+i);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">puts</span>(<span class="string">""</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123; </span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> ONLIGE_JUDGE</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">else</span></span></span><br><span class="line"> <span class="comment">//   freopen("H:\\in.txt","r",stdin);</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">// ONLIGE_JUDGE</span></span></span><br><span class="line">	<span class="keyword">int</span> n;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">	<span class="keyword">while</span> (n--) &#123;</span><br><span class="line">		solve();</span><br><span class="line">	&#125; </span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/12/20/cf-1251A/" data-id="ck4l5i01f0013v8tlaw6fuyjr" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mind/">mind</a></li></ul>
 
     </footer>
   </div>
@@ -516,7 +514,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/dp/">dp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/math/">math</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mind/">mind</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pat甲级/">pat甲级</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/枚举/">枚举</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/模拟/">模拟</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/dp/">dp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/math/">math</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mind/">mind</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pat甲级/">pat甲级</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/暴搜/">暴搜</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/枚举/">枚举</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/模拟/">模拟</a></li></ul>
     </div>
   </div>
 
@@ -526,7 +524,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/dp/" style="font-size: 12.5px;">dp</a> <a href="/tags/math/" style="font-size: 15px;">math</a> <a href="/tags/mind/" style="font-size: 17.5px;">mind</a> <a href="/tags/pat甲级/" style="font-size: 20px;">pat甲级</a> <a href="/tags/枚举/" style="font-size: 12.5px;">枚举</a> <a href="/tags/模拟/" style="font-size: 10px;">模拟</a>
+      <a href="/tags/dp/" style="font-size: 12.5px;">dp</a> <a href="/tags/math/" style="font-size: 15px;">math</a> <a href="/tags/mind/" style="font-size: 17.5px;">mind</a> <a href="/tags/pat甲级/" style="font-size: 20px;">pat甲级</a> <a href="/tags/暴搜/" style="font-size: 10px;">暴搜</a> <a href="/tags/枚举/" style="font-size: 10px;">枚举</a> <a href="/tags/模拟/" style="font-size: 10px;">模拟</a>
     </div>
   </div>
 
@@ -548,6 +546,14 @@
       <ul>
         
           <li>
+            <a href="/2019/12/29/pat甲级1049/">pat甲级1049</a>
+          </li>
+        
+          <li>
+            <a href="/2019/12/27/2019浙工大迎新赛决赛-C/">2019浙工大迎新赛决赛-C(math/三分)</a>
+          </li>
+        
+          <li>
             <a href="/2019/12/25/2019浙工大迎新赛决赛-B/">2019浙工大迎新赛决赛-B(搜索)</a>
           </li>
         
@@ -557,14 +563,6 @@
         
           <li>
             <a href="/2019/12/21/2019浙工大迎新赛决赛-K/">2019浙工大迎新赛决赛-K(mind)</a>
-          </li>
-        
-          <li>
-            <a href="/2019/12/21/2019浙工大迎新赛决赛-D/">2019浙工大迎新赛决赛-D(mind)</a>
-          </li>
-        
-          <li>
-            <a href="/2019/12/21/2019浙工大迎新赛决赛-I/">2019浙工大迎新赛决赛-I(模拟)</a>
           </li>
         
       </ul>
